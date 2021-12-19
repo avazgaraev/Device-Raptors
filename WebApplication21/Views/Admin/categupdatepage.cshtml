@@ -1,0 +1,16 @@
+﻿@model WebApplication21.Models.Category
+@{
+    ViewBag.Title = "categupdatepage";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("categupdate", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x=> x.CategoryName)
+        @Html.TextBoxFor(x=> x.CategoryName, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.CategoryID)
+        <button class="btn btn-primary mt-2">Update Category name</button>
+    </div>
+}
+

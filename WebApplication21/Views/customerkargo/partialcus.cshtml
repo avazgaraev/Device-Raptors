@@ -1,0 +1,19 @@
+﻿@model WebApplication21.Models.customer
+
+<h4 class="mt-3 mb-1">Customer</h4>
+<div>
+    <div>
+        <span class="d-inline-block">Full Name:</span>
+        <strong class="order-detail-value">@Html.DisplayFor(x => x.customername) @Html.DisplayFor(x => x.customersurname)</strong>
+    </div>
+    <div>
+        <span class="d-inline-block">Phone:</span>
+        <strong class="order-detail-value">@Html.DisplayFor(x => x.customerphone) </strong>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <span class="d-inline-block">Address:</span>
+            <span class="order-detail-value"> @Html.DisplayFor(x => x.customeraddress) </span>&nbsp;
+        </div>
+    </div>
+</div>

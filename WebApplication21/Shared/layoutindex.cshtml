@@ -1,0 +1,204 @@
+﻿
+
+@{
+    var cookie = Request.Cookies["users"];
+
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=1" name="viewport" />
+    <meta name="csrf-token" content="Kzop8Ss5oqNvIRgZ8uC6ZP4BL29UXxe5NwT41xd5">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/css/customer.css" />
+    <style>
+        :root {
+            --font-text: Poppins, sans-serif;
+            --color-brand: #5897fb;
+            --color-brand-2: #3256e0;
+            --color-primary: #3f81eb;
+            --color-secondary: #41506b;
+            --color-warning: #ffb300;
+            --color-danger: #ff3551;
+            --color-success: #3ed092;
+            --color-info: #18a1b7;
+            --color-text: #4f5d77;
+            --color-heading: #222222;
+            --color-grey-1: #111111;
+            --color-grey-2: #242424;
+            --color-grey-4: #90908e;
+            --color-grey-9: #f4f5f9;
+            --color-muted: #8e8e90;
+            --color-body: #4f5d77;
+        }
+    </style>
+    <link rel="shortcut icon" href="~/Content/storage/general/logom.png">
+    <title>Device Raptors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42586526-15" type="69d7f599ba948242271bae0a-text/javascript"></script>
+    <script type="69d7f599ba948242271bae0a-text/javascript">
+        "use strict";
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments)};
+         gtag('js', new Date());
+
+         gtag('config', 'UA-42586526-15');
+    </script>
+    <meta property="og:site_name" content="">
+    <meta property="og:title" content="Wowy - Laravel Multipurpose eCommerce Script">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://wowy.botble.com">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://wowy.botble.com/storage/general/open-graph-image.png">
+    <meta name="twitter:title" content="Wowy - Laravel Multipurpose eCommerce Script">
+    <meta name="twitter:description" content="">
+    <link media="all" type="text/css" rel="stylesheet" href="~/vendor/core/plugins/cookie-consent/css/cookie-consente209.css?v=1.0.0">
+    <link media="all" type="text/css" rel="stylesheet" href="~/vendor/core/plugins/language/css/language-publice209.css?v=1.0.0">
+    <link media="all" type="text/css" rel="stylesheet" href="~/Content/css/vendors/normalize.css">
+    <link media="all" type="text/css" rel="stylesheet" href="~/Content/css/vendors/bootstrap.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="~/Content/css/vendors/fontawesome-all.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="~/Content/css/vendors/wowy-font.css">
+    <link media="all" type="text/css" rel="stylesheet" href="~/Content/css/plugins/animate.css">
+    <link media="all" type="text/css" rel="stylesheet" href="~/Content/css/plugins/slick.css">
+    <link media="all" type="text/css" rel="stylesheet" href="~/Content/css/stylea474.css?v=1.5.1">
+    <link rel="alternate" href="~/vi.html" hreflang="vi" />
+</head>
+<body class=" header_full_true wowy-template css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index wowy_toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true header_sticky_true hide_scrolld_true des_header_3 h_banner_true top_bar_true prs_bordered_grid_1 search_pos_canvas lazyload ">
+    <div id="alert-container"></div>
+    <header class="header-area header-height-2 ">
+        <div class="header-top header-top-ptb-1 d-none d-lg-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="header-info">
+                            <ul>
+                                <li><i class="fa fa-phone-alt mr-5"></i><a href="~/tel:1900 - 888">1900 - 888</a></li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li><i class="far fa-anchor mr-5"></i><a href="~/customerkargo/Index"> Your Order</a></li>
+                                }
+                                else
+                                {
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-4">
+
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="header-info header-info-right">
+
+                            <ul>
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li><a href="~/logout/Index" class="signin">Log Out</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="~/Homeindex/Login" class="signin">Sign IN</a></li>
+                                    <li><a href="~/Homeindex/Register" class="signup">Sign UP</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    @RenderBody()
+    @*<section class="newsletter bg-brand p-30 text-white wow fadeIn animated">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-md-3 mb-lg-0">
+                        <div class="row align-items-center">
+                            <div class="col flex-horizontal-center">
+                                <img class="icon-email" src="~/Content/images/icons/icon-email.svg" alt="icon">
+                                <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
+                            </div>
+                            <div class="col my-4 my-md-0">
+                                <h5 class="font-size-15 ml-4 mb-0">...and receive $25 coupon for first shopping.</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+
+                        <form class="newsletter-form" method="post" action="https://wowy.botble.com/newsletter/subscribe">
+                            <input type="hidden" name="_token" value="Kzop8Ss5oqNvIRgZ8uC6ZP4BL29UXxe5NwT41xd5"> <div class="form-subcriber d-flex wow fadeIn animated ">
+                                <input type="email" name="email" class="form-control bg-white font-small" placeholder="Enter your email">
+                                <button class="btn bg-dark text-white" type="submit">Subscribe</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>*@
+    
+
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center">
+                    <img class="jump" src="~/Content/storage/general/logom.png" alt="logo">
+                    <h5 class="mb-5">Now Loading</h5>
+                    <div class="loader">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade custom-modal" id="quick-view-modal" tabindex="-1" aria-labelledby="quick-view-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    <div class="half-circle-spinner loading-spinner">
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                    </div>
+                    <div class="quick-view-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @*<div class="js-cookie-consent cookie-consent cookie-consent-full-width" style="background-color: #000 !important; color: #fff !important;">
+            <div class="cookie-consent-body" style="max-width: 1170px;">
+                <span class="cookie-consent__message">
+                    Your experience on this site will be improved by allowing cookies
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                </span>
+                <button class="js-cookie-consent-agree cookie-consent__agree" style="background-color: #000 !important; color: #fff !important; border: 1px solid #fff !important;">
+                    Allow cookies
+                </button>
+            </div>
+        </div>*@
+    <div data-site-cookie-name="cookie_for_consent"></div>
+    <div data-site-cookie-lifetime="7300"></div>
+    <div data-site-cookie-domain="wowy.botble.com"></div>
+    <div data-site-session-secure=""></div>
+    <script type="69d7f599ba948242271bae0a-text/javascript">
+        window.trans = {
+            "Views": "Views",
+            "Read more": "Read more",
+            "days": "days",
+            "hours": "hours",
+            "mins": "mins",
+            "sec": "sec",
+            "No reviews!": "No reviews!"
+        }
+    </script>
+</body>
+</html>

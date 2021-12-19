@@ -1,0 +1,37 @@
+﻿@model WebApplication21.Models.products
+@{
+    ViewBag.Title = "produpdpage";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("produpd", "Products", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(x => x.productsname)
+    @Html.TextBoxFor(x => x.productsname, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.productmarka)
+    @Html.TextBoxFor(x => x.productmarka, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.productavailable)
+    @Html.TextBoxFor(x => x.productavailable, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.productimg)
+    @Html.TextBoxFor(x => x.productimg, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.Categoryid)
+    @Html.DropDownListFor(x => x.Categoryid, (List<SelectListItem>)ViewBag.listim, new { @class = "form-control" })<br />
+    @*@Html.TextBoxFor(x => x.Categoryid, new { @class = "form-control mb-2" })*@
+
+    @Html.LabelFor(x => x.productstock)
+    @Html.TextBoxFor(x => x.productstock, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.productstprice)
+    @Html.TextBoxFor(x => x.productstprice, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.productndprice)
+    @Html.TextBoxFor(x => x.productndprice, new { @class = "form-control mb-2" })
+    @Html.HiddenFor(x => x.productsid)
+    <button class="btn btn-primary mt-2">Update </button>
+</div>
+}

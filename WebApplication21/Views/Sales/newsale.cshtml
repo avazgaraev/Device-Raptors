@@ -1,0 +1,36 @@
+﻿@model WebApplication21.Models.salemove
+@{
+    ViewBag.Title = "newsale";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.products)
+    @Html.DropDownListFor(x => x.productsid, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })<br />
+
+    
+
+    @Html.LabelFor(x => x.customer)
+    @Html.DropDownListFor(x => x.customerid, (List<SelectListItem>)ViewBag.vl2, new { @class = "form-control" })<br />
+
+
+    @Html.LabelFor(x => x.salecount)
+    @Html.TextBoxFor(x => x.salecount, new { @class = "form-control mb-2" })
+
+
+    @Html.LabelFor(x => x.saleprice)
+    @Html.TextBoxFor(x => x.saleprice, new { @class = "form-control mb-2" })
+
+
+
+
+
+    @Html.LabelFor(x => x.saleallprice)
+    @Html.TextBoxFor(x => x.saleallprice, new { @class = "form-control mb-2" })
+
+
+
+
+    <button class="btn btn-primary">Submit</button>
+</form>
+

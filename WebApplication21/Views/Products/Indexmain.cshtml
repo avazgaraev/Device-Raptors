@@ -1,0 +1,61 @@
+﻿@using WebApplication21.Models;
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<products>
+
+@{
+    ViewBag.Title = "Indexmain";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("Indexmain", "Products", FormMethod.Get))
+{
+    <p>Product name: @Html.TextBox("p") </p>
+    <input type="submit" values="search" />
+
+}
+
+<script src="~/Content/js/jquery-1.10.2.js"></script>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Stock</th>
+        <th>First price</th>
+        <th>End price</th>
+        <th>Availability</th>
+        <th>Category</th>
+        <th>Image of product</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Make sale</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.productsname</td>
+            <td>@item.productmarka</td>
+            <td>@item.productstock</td>
+            <td>@item.productstprice $</td>
+            <td>@item.productndprice $</td>
+            <td>@item.productavailable</td>
+            <td>@item.Category.CategoryName</td>
+            <td>
+                <img src="@item.productimg" style="width:64%;height:70px; margin: 0 16% 0 16% " />
+            </td>
+            <td><a href="/Products/proddel/@item.productsid" class="btn btn-danger" id="btn1"><i class="fas fa-trash"></i></a></td>
+            <td><a href="/Products/produpdpage/@item.productsid" class="btn btn-danger"><i class="fas fa-fan"></i></a></td>
+            <td><a href="/Products/makesale/@item.productsid" class="btn btn-danger"><i class="fas fa-plus"></i></a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, pages => Url.Action("Indexmain", new { pages })
+,new PagedListRenderOptions { LiElementClasses = new List<string> { "page-link" } })
+
+<a href="/Products/productadd" class="btn btn-info" >New product</a>
+
+<script>
+    $('#btn1').click(function () {
+        alert("Sure ?")
+    })
+</script>

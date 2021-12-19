@@ -1,0 +1,28 @@
+﻿@model WebApplication21.Models.sliders
+
+@{
+    ViewBag.Title = "updslider";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("updslidere", "slider", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.sliderid)
+
+    @Html.LabelFor(x => x.slidertoprod)
+    @Html.TextBoxFor(x => x.slidertoprod, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.sliderimg)
+    @Html.TextBoxFor(x => x.sliderimg, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.sliderheader)
+    @Html.TextBoxFor(x => x.sliderheader, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.sliderdiscabout)
+    @Html.TextBoxFor(x => x.sliderdiscabout, new { @class = "form-control" })
+    <button class="btn btn-primary mt-2">Update Slide</button>
+</div>
+}
+
+

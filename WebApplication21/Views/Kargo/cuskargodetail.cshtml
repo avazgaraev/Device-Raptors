@@ -1,0 +1,35 @@
+﻿@using WebApplication21.Models
+@model List<kargofollow>
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "kargostatus";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>Text</th>
+        <th>Date</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.kargodetail</td>
+            <td>@item.kargofoldate</td>
+
+
+        </tr>
+    }
+</table>
+
+
+

@@ -1,0 +1,28 @@
+﻿@using WebApplication21.Models
+@model List<salemove>
+@{int i = 0;}
+@foreach (var item in Model)
+{
+
+
+    <tr>
+        <td class="align-middle">@{i++;}@i</td>
+        <td class="align-middle">
+            <img src="@item.products.productimg" width="50" alt="Leather Watch Band Serial 3">
+        </td>
+        <td class="align-middle">
+            <strong>@item.products.productsname </strong> <p>
+                <small>
+                    Color: Blue, Size: XXL
+                </small>
+            </p>
+        </td>
+        <td class="align-middle"> $ </td>
+        <td class="align-middle">@item.salecount</td>
+        <td class="money text-right align-middle">
+            <strong>
+                @item.saleallprice $
+            </strong>
+        </td>
+    </tr>
+}

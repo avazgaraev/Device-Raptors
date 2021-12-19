@@ -1,0 +1,35 @@
+﻿@using WebApplication21.Models
+@model List<salemove>
+
+@{
+    ViewBag.Title = "cussales";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+<ol class="breadcrumb mb-4 mt-4">
+    <li class="breadcrumb-item active"><h4>Customer: @ViewBag.cari</h4></li>
+</ol>
+<table class="table table-striped">
+    <tr>
+        <th>Satis Id</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Count</th>
+        <th>All</th>
+        <th>History</th>
+        <th>Yazdir</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.saleid</td>
+            <td>@item.products.productsname</td>
+            <td>@item.saleprice</td>
+            <td>@item.salecount</td>
+            <td>@item.saleallprice</td>
+            <td>@item.saledate</td>
+            <td><a href="#" class="btn btn-primary">Yazdir</a></td>
+        </tr>
+    }
+</table>
+

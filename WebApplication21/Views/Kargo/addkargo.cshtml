@@ -1,0 +1,25 @@
+﻿@model WebApplication21.Models.kargo
+
+@{
+    ViewBag.Title = "productadd";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@using (Html.BeginForm("addkargo", "Kargo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(x => x.kargono)
+    <input type="text"  value="@ViewBag.value" class="form-control" name="kargono" readonly/><br />
+
+
+    @Html.LabelFor(x => x.customermail)
+    @Html.TextBoxFor(x => x.customermail, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.kargodate)
+    <input class="form-control" type="date" name="kargodate" /><br />
+    @Html.LabelFor(x => x.kargodetail)
+    @Html.TextAreaFor(x => x.kargodetail, new { @class = "form-control mb-2" })
+    <button class="btn btn-primary">Submit</button>
+
+    
+}

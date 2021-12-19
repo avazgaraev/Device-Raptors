@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+<br />
+<button class="btn btn-primary" id="btn1">Button text</button>
+<button class="btn btn-success" id="btn2">Button success</button>
+<button class="btn btn-danger" id="btn3">Button delete</button>
+
+
+
+<script src="~/Content/js/jquery-1.10.2.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    $('#btn1').click(function () {
+        swal("Hrllo")
+    })
+</script>
+
+
+<script>
+    $('#btn2').click(function () {
+        swal("Good job!", "You clicked the button!", "success");
+    })
+</script>
+
+<script>
+    $('#btn3').click(function () {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+    })
+</script>

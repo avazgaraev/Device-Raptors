@@ -1,0 +1,8 @@
+﻿@using WebApplication21.Models
+@model List<customer>
+
+@foreach (var item in Model)
+{
+
+    <strong>@item.customername @item.customersurname</strong>
+}

@@ -1,0 +1,22 @@
+﻿@using WebApplication21.Models
+@model List<Category>
+
+<div class="categories-dropdown-wrap categories-dropdown-active-large default-open open ">
+        <ul>
+            <li>
+                <a href="product-categories/hot-promotions.html">
+                    <i class="far fa-star"></i>
+                    Hot Promotions
+                </a>
+            </li>
+@foreach (var item in Model)
+{
+            <li>
+                <a href="~/homeindex/prodcat/@item.CategoryID">
+                    @item.CategoryName
+                </a>
+            </li>
+}
+        </ul>
+        <div class="more_categories">Show more...</div>
+    </div>

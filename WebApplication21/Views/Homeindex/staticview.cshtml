@@ -1,0 +1,21 @@
+﻿@using WebApplication21.Models
+@model List<Category>
+
+
+<div class="search-style-2">
+    <form action="~/Homeindex/Index" method="get">
+        <div class="form-group--icon">
+            <div class="product-cat-label">All Categories</div>
+            <select class="product-category-select">
+                @foreach (var item in Model)
+                {
+
+                    <option>@item.CategoryName</option>
+
+                }
+            </select>
+        </div>
+        <input type="text" name="q" placeholder="Search for items…" autocomplete="off">
+        <button type="submit"> <i class="far fa-search"></i> </button>
+    </form>
+</div>

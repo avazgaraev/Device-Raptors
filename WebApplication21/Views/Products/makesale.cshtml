@@ -1,0 +1,44 @@
+﻿@model WebApplication21.Models.salemove
+@{
+    ViewBag.Title = "makesale";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.productsid)
+    <input name="productsid" value="@ViewBag.dgr1" class="form-control" readonly />
+
+
+
+    @Html.LabelFor(x => x.customerid)
+    @Html.TextBoxFor(x => x.customerid, new { @class = "form-control" })<br />
+
+
+    @Html.LabelFor(x => x.salecount)
+    <input type="number" id="txt1" onkeyup="sum();" class="form-control" min="0" name="salecount" placeholder="Count"/>
+
+
+    @Html.LabelFor(x => x.saleprice)
+    <input type="number" id="txt2" onkeyup="sum();" name="saleprice" value="@ViewBag.dgr2" class="form-control"  />
+
+
+
+
+
+    @Html.LabelFor(x => x.saleallprice)
+    <input type="text" name="saleallprice" id="txt3" class="form-control" readonly/><br />
+
+
+
+    <button class="btn btn-primary">Submit</button>
+</form>
+
+<script>
+    function sum() {
+        var count1 = document.getElementById('txt1').value;
+        var count2 = document.getElementById('txt2').value;
+        var result = parseInt(count1)*parseInt(count2);
+        if (!isNaN(result)) {
+            document.getElementById('txt3').value = result;
+        }
+    }
+</script>

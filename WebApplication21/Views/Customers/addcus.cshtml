@@ -1,0 +1,25 @@
+﻿@model WebApplication21.Models.customer
+@{
+    ViewBag.Title = "addcus";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.customername)
+    @Html.TextBoxFor(x => x.customername, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.customersurname)
+    @Html.TextBoxFor(x => x.customersurname, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.customermail)
+    @Html.TextBoxFor(x => x.customermail, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.customeraddress)
+    @Html.TextBoxFor(x => x.customeraddress, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.customercity)
+    @Html.TextBoxFor(x => x.customercity, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Shared/layoutviews.cshtml";
+}
+
+<main class="main">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <a href="index.html" itemprop="item" title="Home">
+                    Home
+                    <meta itemprop="name" content="Home" />
+                    <meta itemprop="position" content="1" />
+                </a>
+                <span></span>
+                Register
+                <meta itemprop="name" content="Register" />
+                <meta itemprop="position" content="2" />
+            </div>
+        </div>
+    </div>
+    <section class="pt-100 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 m-auto">
+                    <div class="login_wrap widget-taber-content p-30 background-white border-radius-10">
+                        <div class="padding_eight_all bg-white">
+                            <div class="heading_s1 mb-20">
+                                <h3 class="mb-20">Register</h3>
+                                <p>Please fill in the information below</p>
+                            </div>
+                            <form class="form--auth" method="post" ">
+                                <input type="hidden" name="_token" value="Kzop8Ss5oqNvIRgZ8uC6ZP4BL29UXxe5NwT41xd5"> <div class="form__content">
+                                    <div class="form-group">
+                                        <label for="txt-name" class="required">Name</label>
+                                        <input class="form-control" name="customername" id="username" type="text" value="" placeholder="Please enter your name">
+                                    </div><div class="form-group">
+                                        <label for="txt-name" class="required">Surname</label>
+                                        <input class="form-control" name="customersurname" id="username" type="text" value="" placeholder="Please enter your name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txt-name" class="required">City</label>
+                                        <input class="form-control" name="customercity" id="username" type="text" value="" placeholder="Please enter your name">
+                                    </div>
+                                <div class="form-group">
+                                        <label for="txt-name" class="required">Address</label>
+                                        <input class="form-control" name="customeraddress" id="username" type="text" value="" placeholder="Please enter your name">
+                                    </div>
+                                <div class="form-group">
+                                    <label for="txt-email" class="required">Email Address</label>
+                                    <input class="form-control" name="customermail" id="useremail" type="email" value="" placeholder="Please enter your email address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txt-password" class="required">Password</label>
+                                    <input class="form-control" type="password" name="customerpass" id="userpassword" placeholder="Please enter your password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txt-password-confirmation" class="required">Password confirmation</label>
+                                    <input class="form-control" type="password" name="customerpass" id="userrepassword" placeholder="Please enter your password confirmation">
+                                </div>
+                                <div class="form-group">
+                                    <div class="ps-checkbox">
+                                    </div>
+                                </div>
+                                <div class="login_footer form-group">
+                                    <div class="chek-form">
+                                        <div class="custome-checkbox">
+                                            <input type="hidden" name="agree_terms_and_policy" value="0">
+                                            <input required class="form-check-input" type="checkbox" name="agree_terms_and_policy" id="agree-terms-and-policy" value="1">
+                                            <label class="form-check-label" for="agree-terms-and-policy"><span>I agree to terms &amp; Policy.</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-fill-out btn-block hover-up">Register</button>
+                                </div>
+                                <br>
+                                <p>Have an account already? <a href="~/Homeindex/Login" class="d-inline-block">Login</a></p>
+                                <div class="text-left">
+                                    <div class="login-options">
+                                        <br>
+                                        <p style="font-size: 14px">Login with social networks</p>
+                                        <ul class="social-icons">
+                                            <li>
+                                                <a class="social-icon-color facebook" data-bs-toggle="tooltip" data-bs-original-title="facebook" href="https://www.facebook.com/v3.3/dialog/oauth?client_id=2062637023872679&amp;redirect_uri=https%3A%2F%2Fwowy.botble.com%2Fauth%2Fcallback%2Ffacebook&amp;scope=email&amp;response_type=code&amp;state=IAKDhW2BdEifryy8H8dTD62UaDsn2Lu4Z7GTXLxr"></a>
+                                            </li>
+                                            <li>
+                                                <a class="social-icon-color google" data-bs-toggle="tooltip" data-bs-original-title="google" href="https://accounts.google.com/o/oauth2/auth?client_id=329814605456-ruovuotj5aheu5fodoj7kmhfnmguaofc.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fwowy.botble.com%2Fauth%2Fcallback%2Fgoogle&amp;scope=openid+profile+email&amp;response_type=code&amp;state=fs2rIHBQUdM5EScA0AMpx8YZoRpV4Ac1UoDE5WDY"></a>
+                                            </li>
+                                            <li>
+                                                <a class="social-icon-color github" data-bs-toggle="tooltip" data-bs-original-title="github" href="https://github.com/login/oauth/authorize?client_id=a195aef6078542bbb885&amp;redirect_uri=https%3A%2F%2Fwowy.botble.com%2Fauth%2Fcallback%2Fgithub&amp;scope=user%3Aemail&amp;response_type=code&amp;state=pBhHaXT2brFaCM976SvPkeguoi51BfdgReOVKJfl"></a>
+                                            </li>
+                                            <li>
+                                                <a class="social-icon-color linkedin" data-bs-toggle="tooltip" data-bs-original-title="linkedin" href="https://www.linkedin.com/oauth/v2/authorization?client_id=865vkhdnjuqp9f&amp;redirect_uri=https%3A%2F%2Fwowy.botble.com%2Fauth%2Fcallback%2Flinkedin&amp;scope=r_liteprofile+r_emailaddress&amp;response_type=code&amp;state=vPJSLwPjHtJqi1wL8tNJC68o5JX6sxQ9GhhN6beJ"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+

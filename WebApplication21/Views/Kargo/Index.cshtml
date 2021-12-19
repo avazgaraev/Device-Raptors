@@ -1,0 +1,36 @@
+﻿@using WebApplication21.Models
+@model List<kargo>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+{
+    <p>Shippping address: @Html.TextBox("p") </p>
+    <input type="submit" values="search" />
+
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>Receiver</th>
+        <th>Date</th>
+        <th>Kargo No</th>
+        <th>Details</th>
+    </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.kargorec</td>
+            <td>@item.kargodate</td>
+            <td>@item.kargono</td>
+            <td><a href="/Kargo/kargostatus/@item.kargono" class="btn btn-primary"><i class="fas fa-info"></i></a></td>
+
+        </tr>
+        }
+</table>
+<a href="/Kargo/addkargo" class="btn btn-info">Kargo add</a>

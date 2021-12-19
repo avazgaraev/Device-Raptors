@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebApplication21.Models.classgroup3>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Bredns and counts</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Brends</th>
+                    <th>Progress bar</th>
+                    <th style="width: 40px">Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int sira = 0;}
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@{sira++;}@sira</td>
+                        <td>@item.Brend</td>
+                        <td>
+                            @if (item.Count >= 1 && item.Count <=5 )
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                </div>
+
+                            }
+                            @if (item.Count >= 5 && item.Count <= 10)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                </div>
+
+                            }
+                            
+                        </td>
+                        <td>@item.Count</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

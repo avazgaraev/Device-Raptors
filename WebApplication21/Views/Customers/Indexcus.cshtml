@@ -1,0 +1,36 @@
+﻿@using WebApplication21.Models
+@model List<customer>
+@{
+    ViewBag.Title = "Indexcus";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>Customer ID</th>
+        <th>Customer Name</th>
+        <th>Customer Surname</th>
+        <th>Customer Address</th>
+        <th>Customer City</th>
+        <th>Customer Email</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Sale History</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.customerid</td>
+            <td>@item.customername</td>
+            <td>@item.customersurname</td>
+            <td>@item.customeraddress</td>
+            <td>@item.customercity</td>
+            <td>@item.customermail</td>
+            <td><a href="/Customers/cusdel/@item.customerid" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
+            <td><a href="/Customers/cusupdatepage/@item.customerid" class="btn btn-primary"><i class="fas fa-fan"></i></a></td>
+            <td><a href="/Customers/cussales/@item.customerid" class="btn btn-info"><i class="fas fa-info"></i></a></td>
+        </tr>
+    }
+</table>
+    <a href="/Customers/addcus" class="btn btn-primary">Add new Customer</a>
+

@@ -1,0 +1,18 @@
+﻿@using WebApplication21.Models
+@model List<Category>
+
+<div class="sidebar-widget widget_categories mb-30 p-30 bg-grey border-radius-10">
+    <div class="widget-header position-relative mb-20 pb-10">
+        <h5 class="widget-title mb-10">Categories</h5>
+        <div class="bt-1 border-color-1"></div>
+    </div>
+    <div>
+        <ul class="categor-list">
+            @foreach (var item in Model)
+            {
+
+                <li class="cat-item text-muted"><a href="/Homeindex/prodcat/@item.CategoryID">@item.CategoryName</a></li>
+            }
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebApplication21.Models.classgroup2>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Product Category count</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Category</th>
+                    <th>Progress bar</th>
+                    <th style="width: 40px">Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int sira=0;}
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@{sira++;}@sira</td>
+                        <td>@item.Category</td>
+                        <td>
+                            <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-danger" style="width: @item.Count%;"></div>
+                            </div>
+                        </td>
+                        <td>@item.Count</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+

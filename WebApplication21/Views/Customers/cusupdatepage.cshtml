@@ -1,0 +1,29 @@
+﻿@model WebApplication21.Models.customer
+@{
+    ViewBag.Title = "cusupdatepage";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("cusupdate", "Customers", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.customerid)
+    @Html.LabelFor(x => x.customername)
+    @Html.TextBoxFor(x => x.customername, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.customername, "", new { @style = "color:red" })
+
+    @Html.LabelFor(x => x.customersurname)
+    @Html.TextBoxFor(x => x.customersurname, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.customersurname, "", new { @style = "color:red" })
+    @Html.LabelFor(x => x.customermail)
+    @Html.TextBoxFor(x => x.customermail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.customermail, "", new { @style = "color:red" })
+    @Html.LabelFor(x => x.customeraddress)
+    @Html.TextBoxFor(x => x.customeraddress, new { @class = "form-control" })
+    @Html.LabelFor(x => x.customercity)
+    @Html.TextBoxFor(x => x.customercity, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Update</button>
+</div>
+}
+

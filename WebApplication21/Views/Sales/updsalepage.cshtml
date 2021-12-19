@@ -1,0 +1,37 @@
+﻿@model WebApplication21.Models.salemove
+@{
+    ViewBag.Title = "updsalepage";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+@using (Html.BeginForm("saleupd", "Sales", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.saleid)
+
+    @Html.LabelFor(x => x.products)
+    @Html.DropDownListFor(x => x.productsid, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })<br />
+
+
+
+    @Html.LabelFor(x => x.customer)
+    @Html.DropDownListFor(x => x.customerid, (List<SelectListItem>)ViewBag.vl2, new { @class = "form-control" })<br />
+
+    @Html.LabelFor(x => x.salecount)
+    @Html.TextBoxFor(x => x.salecount, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.saleprice)
+    @Html.TextBoxFor(x => x.saleprice, new { @class = "form-control mb-2" })
+    @*@Html.TextBoxFor(x => x.Categoryid, new { @class = "form-control mb-2" })*@
+
+    @Html.LabelFor(x => x.saleallprice)
+    @Html.TextBoxFor(x => x.saleallprice, new { @class = "form-control mb-2" })
+
+    @Html.LabelFor(x => x.saledate)
+    @Html.TextBoxFor(x => x.saledate, new { @class = "form-control mb-2" })
+
+    <button class="btn btn-primary mt-2">Update </button>
+</div>
+}

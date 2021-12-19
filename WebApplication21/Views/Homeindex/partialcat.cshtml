@@ -1,0 +1,125 @@
+﻿@using WebApplication21.Models;
+@model List<Category>
+
+
+<footer class="main">
+    <section class="section-padding-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="widget-about font-md mb-md-5 mb-lg-0">
+                        <div class="logo logo-width-1 wow fadeIn animated">
+                            <a href="~/Homeindex/Index">
+                                <img src="~/Content/storage/general/logom.png" alt="">
+                            </a>
+                        </div>
+                        <h4 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h4>
+                        <p class="wow fadeIn animated">
+                            <strong class="d-inline-block">Address:</strong> 562 Wellington Road, Street 32, San Francisco
+                        </p>
+                        <p class="wow fadeIn animated">
+                            <strong class="d-inline-block">Phone:</strong> +01 2222 365 /(+91) 01 2345 6789
+                        </p>
+                        <p class="wow fadeIn animated">
+                            <strong class="d-inline-block">Working hours:</strong> 10:00 - 18:00, Mon - Sat
+                        </p>
+                        <h4 class="mb-10 mt-20 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h4>
+                        <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
+                            <a href="https://www.facebook.com/" title="Facebook" style="background-color: #3b5999; border: 1px solid #3b5999;">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.twitter.com/" title="Twitter" style="background-color: #55ACF9; border: 1px solid #55ACF9;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" title="Instagram" style="background-color: #E1306C; border: 1px solid #E1306C;">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/" title="Linkedin" style="background-color: #007bb6; border: 1px solid #007bb6;">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://www.pinterest.com/" title="Pinterest" style="background-color: #cb2027; border: 1px solid #cb2027;">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                    <h5 class="widget-title mb-30 wow fadeIn animated">Categories</h5>
+                    <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                        @foreach (var item in Model)
+                        {
+
+
+                            <li>
+                                <a href="product-categories/hot-promotions.html">
+                                    <span>@item.CategoryName</span>
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                    <h5 class="widget-title mb-30 wow fadeIn animated">Information</h5>
+                    <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                        <li>
+                            <a href="contact.html">
+                                <span>Contact Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="cookie-policy.html">
+                                <span>About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="terms-conditions.html">
+                                <span>Terms &amp; Conditions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="returns-exchanges.html">
+                                <span>Returns &amp; Exchanges</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="shipping-delivery.html">
+                                <span>Shipping &amp; Delivery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="privacy-policy.html">
+                                <span>Privacy Policy</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="widget-title mb-30 wow fadeIn animated">Payments</h5>
+                    <div class="row">
+                        <div class="col-md-4 col-lg-12">
+                            <p class="mb-20 wow fadeIn animated mt-md-3">Secured Payment Gateways</p>
+                            <img class="wow fadeIn animated" src="~/Content/storage/general/payment-methods.png" alt="Payment methods">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container pb-20 wow fadeIn animated">
+        <div class="row">
+            <div class="col-12 mb-20">
+                <div class="footer-bottom"></div>
+            </div>
+            <div class="col-lg-6">
+                <p class="float-md-left font-sm text-muted mb-0">Copyright © 2021 Wowy all rights reserved. Powered by Botble.</p>
+            </div>
+            <div class="col-lg-6">
+                <p class="text-lg-end text-start font-sm text-muted mb-0">
+                    All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
