@@ -7,6 +7,7 @@ using WebApplication21.Models;
 
 namespace WebApplication21.Controllers
 {
+    [Authorize]
     public class customeraddressController : Controller
     {
         context c = new context();
@@ -14,8 +15,9 @@ namespace WebApplication21.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["customermail"];
-            var values = c.Customers.Where(x => x.customermail == mail).ToList();
-            return View(values);
+            var values = c.Customers.FirstOrDefault(x => x.customermail == mail);
+            var issue = c.cusaddresses.Where(x => x.customerid == values.customerid).ToList();
+            return View(issue);
         }
         public ActionResult addaddress()
         {
@@ -24,11 +26,12 @@ namespace WebApplication21.Controllers
             return View(values);
         }
         [HttpPost]
-        public ActionResult addaddress(customer b)
+        public ActionResult addaddress(cusaddress b)
         {
             var mail = (string)Session["customermail"];
             var values = c.Customers.FirstOrDefault(x => x.customermail == mail);
-            c.Customers.Add(values);
+            b.customerid = values.customerid;
+            c.cusaddresses.Add(b);
             c.SaveChanges();
             return RedirectToAction("Index", "customeraddress");
         }
@@ -40,7 +43,43 @@ namespace WebApplication21.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public PartialViewResult partcus()
+        {
+            var mail = (string)Session["customermail"];
+            var values = c.Customers.FirstOrDefault(x => x.customermail == mail);
+            return PartialView(values);
+        }
 
+        public ActionResult editadd(int id)
+        {
+            var values = c.cusaddresses.Find(id);
+            return View("editadd", values);
+        }
+        [HttpPost]
+        public ActionResult editadd(cusaddress d)
+        {
+            var mail = (string)Session["customermail"];
+            var values = c.Customers.FirstOrDefault(x => x.customermail == mail);
+            var cusall = c.cusaddresses.Find(d.addressid);
+            //d.addstate = c.cusaddresses.FirstOrDefault(x => x.customerid == values.customerid).addstate;
+            //d.zipcode = c.cusaddresses.FirstOrDefault(x => x.customerid == values.customerid).zipcode;
+            //d.address = c.cusaddresses.FirstOrDefault(x => x.customerid == values.customerid).address;
+            //d.addcity = c.cusaddresses.FirstOrDefault(x => x.customerid == values.customerid).addcity;
+             cusall.addstate= d.addstate;
+            cusall.addcity=d.addcity ;
+            cusall.address=d.address ;
+            cusall.zipcode=d.zipcode ;
+
+            c.SaveChanges();
+            return RedirectToAction("Index", "customeraddress");
+        }
+        public ActionResult removeadd(int id)
+        {
+            var values = c.cusaddresses.Find(id);
+            c.cusaddresses.Remove(values);
+            c.SaveChanges();
+            return RedirectToAction("Index", "customeraddress");
+        }
 
     }
 }

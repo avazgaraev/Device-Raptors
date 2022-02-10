@@ -1,5 +1,5 @@
 ﻿@using WebApplication21.Models;
-@model List<Category>
+@model List<subcategory>
 
 
 <footer class="main">
@@ -13,7 +13,7 @@
                                 <img src="~/Content/storage/general/logom.png" alt="">
                             </a>
                         </div>
-                        <h4 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h4>
+                        @*<h4 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h4>
                         <p class="wow fadeIn animated">
                             <strong class="d-inline-block">Address:</strong> 562 Wellington Road, Street 32, San Francisco
                         </p>
@@ -22,7 +22,7 @@
                         </p>
                         <p class="wow fadeIn animated">
                             <strong class="d-inline-block">Working hours:</strong> 10:00 - 18:00, Mon - Sat
-                        </p>
+                        </p>*@
                         <h4 class="mb-10 mt-20 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h4>
                         <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
                             <a href="https://www.facebook.com/" title="Facebook" style="background-color: #3b5999; border: 1px solid #3b5999;">
@@ -50,11 +50,14 @@
                         {
 
 
-                            <li>
-                                <a href="product-categories/hot-promotions.html">
-                                    <span>@item.CategoryName</span>
-                                </a>
-                            </li>
+                        <li>
+                            @*<a href="product-categories/hot-promotions.html">
+                                <span>Hot Promotions</span>
+                            </a>*@
+                            <a href="~/Homeindex/prodcat/@item.SubcategoryId">
+                                <span>@item.SubcategoryName</span>
+                            </a>
+                        </li>
                         }
 
                     </ul>
@@ -63,32 +66,32 @@
                     <h5 class="widget-title mb-30 wow fadeIn animated">Information</h5>
                     <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
                         <li>
-                            <a href="contact.html">
+                            <a href="~/Homeindex/contact">
                                 <span>Contact Us</span>
                             </a>
                         </li>
                         <li>
-                            <a href="cookie-policy.html">
+                            <a href="~/Homeindex/aboutus/">
                                 <span>About Us</span>
                             </a>
                         </li>
                         <li>
-                            <a href="terms-conditions.html">
+                            <a href="~/Homeindex/terms/">
                                 <span>Terms &amp; Conditions</span>
                             </a>
                         </li>
-                        <li>
+                        @*<li>
                             <a href="returns-exchanges.html">
                                 <span>Returns &amp; Exchanges</span>
                             </a>
-                        </li>
+                        </li>*@
                         <li>
-                            <a href="shipping-delivery.html">
+                            <a href="~/Homeindex/shipping">
                                 <span>Shipping &amp; Delivery</span>
                             </a>
                         </li>
                         <li>
-                            <a href="privacy-policy.html">
+                            <a href="~/Homeindex/privacy">
                                 <span>Privacy Policy</span>
                             </a>
                         </li>
@@ -100,6 +103,7 @@
                         <div class="col-md-4 col-lg-12">
                             <p class="mb-20 wow fadeIn animated mt-md-3">Secured Payment Gateways</p>
                             <img class="wow fadeIn animated" src="~/Content/storage/general/payment-methods.png" alt="Payment methods">
+                            <img class="wow fadeIn animated" width="50px" src="http://2.bp.blogspot.com/-gzW3J2sXFm0/U5h4jgo_1UI/AAAAAAAACqo/E5KtY-0gZfw/s1600/Logo+Paypal.png" alt="Payment methods">
                         </div>
                     </div>
                 </div>
@@ -112,7 +116,7 @@
                 <div class="footer-bottom"></div>
             </div>
             <div class="col-lg-6">
-                <p class="float-md-left font-sm text-muted mb-0">Copyright © 2021 Wowy all rights reserved. Powered by Botble.</p>
+                <p class="float-md-left font-sm text-muted mb-0">Copyright © @DateTime.Now.Year Device Raptors all rights reserved. Powered by Clopse Inc.</p>
             </div>
             <div class="col-lg-6">
                 <p class="text-lg-end text-start font-sm text-muted mb-0">

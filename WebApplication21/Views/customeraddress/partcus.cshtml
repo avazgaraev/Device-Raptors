@@ -1,0 +1,11 @@
+﻿@model WebApplication21.Models.customer
+
+<div class="col-8">
+    <div class="profile-usertitle-name pt-2">
+       
+
+        <strong>@Html.DisplayFor(x => x.customername) @Html.DisplayFor(x => x.customersurname)</strong>
+            <p><small>@HttpContext.Current.User.Identity.Name</small></p>
+        
+    </div>
+</div>

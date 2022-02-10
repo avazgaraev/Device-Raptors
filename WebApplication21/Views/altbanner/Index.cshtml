@@ -1,0 +1,33 @@
+﻿@using WebApplication21.Models
+@model List<altbanner>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<table class="table table-striped">
+    <tr>
+        <th>Slider img</th>
+        <th>Slider header</th>
+        <th>Slider which products to discount</th>
+        <th>Delete Slider</th>
+        <th>Update Slider</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+
+            <td><img style="width:10%" src="@item.sliderimg" /></td>
+            <td>@item.sliderheader</td>
+            <td>@item.slidertoprod</td>
+            <td><a href="/sliderright/delslider/@item.sliderid" class="btn btn-primary"><i class="fas fa-trash"></i></a></td>
+            <td><a href="/sliderright/updslider/@item.sliderid" class="btn btn-primary"><i class="fas fa-fan"></i></a></td>
+        </tr>
+    }
+</table>
+<a href="/altbanner/addslider" class="btn btn-primary">Add Slider</a>
+

@@ -1,0 +1,167 @@
+﻿
+@{
+    ViewBag.Title = "contact";
+    Layout = "~/Shared/layoutviews.cshtml";
+}
+
+<div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+    <div class="container">
+        <div class="header-wrap header-space-between">
+            <div class="logo logo-width-1">
+                <a href="~/Homeindex/Index"><img src="~/Content/storage/general/logom.png" alt="Device Raptors"></a>
+            </div>
+            @Html.Action("parcat", "Homeindex")
+            <div class="header-action-right">
+                <div class="header-action-2">
+
+
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="cart.html">
+                            <img alt="Cart" src="~/Content/images/icons/icon-cart.svg">
+                            <span class="pro-count blue">0</span>/a>
+                        <div class="cart-dropdown-wrap cart-dropdown-hm2">
+                            <a href="~/basket/Index" class="text-center" style="font-weight:bolder; color: var(--color-warning)">Let's see your basket</a>
+                        </div>
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/customerpanel/Index">
+                            <img alt="Sign In" src="~/Content/images/icons/icon-user.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header-bottom header-bottom-bg-color sticky-bar gray-bg sticky-blue-bg">
+    <div class="container">
+        <div class="header-wrap header-space-between position-relative main-nav">
+            <div class="logo logo-width-1 d-block d-lg-none">
+                <a href="index.html"><img src="~/Content/storage/general/logo-light.png" alt="Device Raptors"></a>
+            </div>
+            <div class="main-categories-wrap d-none d-lg-block">
+                <a class="categories-button-active" href="#">
+                    <span class="fa fa-list"></span> Browse Categories <i class="down far fa-chevron-down"></i> <i class="up far fa-chevron-up"></i>
+                </a>
+                @Html.Action("parcat1", "Homeindex")
+            </div>
+
+            <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block main-menu-light-white hover-boder hover-boder-white">
+                <nav>
+                    <ul>
+                        <li class="">
+                            <a href="~/Homeindex/Index" class="active" target="_self">
+                                Home
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="~/Homeindex/Shop" target="_self">
+                                Shop
+                            </a>
+
+                        </li>
+
+
+                        <li class="">
+                            <a href="~/Homeindex/contact" target="_self">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hotline d-none d-lg-block">
+                <p><i class="fa fa-phone-alt"></i><span>Hotline</span> 1900 - 888</p>
+            </div>
+            <div class="header-action-right d-block d-lg-none">
+                <div class="header-action-2">
+
+                    @*<div class="header-action-icon-2">
+                            <a href="wishlist.html">
+                                <img alt="wowy" src="~/Content/images/icons/icon-heart-white.svg">
+                                <span class="pro-count white"> <span>0</span></span>
+                            </a>
+                        </div>*@
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="~/customersale/Index">
+                            <img alt="wowy" src="~/Content/images/icons/icon-cart-white.svg">
+                            <span class="pro-count white">0</span>
+                        </a>
+                        @*<div class="cart-dropdown-wrap cart-dropdown-hm2">
+                                <span>No products in the cart.</span>
+                            </div>*@
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/Homeindex/login">
+                            <img alt="wowy" src="~/Content/images/icons/icon-user-white.svg">
+                        </a>
+                    </div>
+                    <div class="header-action-icon-2 d-block d-lg-none">
+                        <div class="burger-icon burger-icon-white">
+                            <span class="burger-icon-top"></span>
+                            <span class="burger-icon-mid"></span>
+                            <span class="burger-icon-bottom"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </header>
+
+<section class="mt-50 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-10 m-auto">
+                <div class="contact-from-area  padding-20-row-col wow tmFadeInUp animated animated animated" style="visibility: visible;">
+                    <h3 class="mb-10 text-center">Drop Us a Line</h3>
+                    <p class="text-muted mb-30 text-center font-sm">Contact Us For Any Questions</p>
+                    <form method="POST" class="contact-form-style text-center contact-form">
+                        <input name="_token" type="hidden" value="Z3E28gQXV5g1Rj79vtIxykQqeWYiHUBjedArxKAP">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="input-style mb-20">
+                                    <input name="contactname" value="" placeholder="Name" type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="input-style mb-20">
+                                    <input name="contactsurname" value="" placeholder="Surname" type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="input-style mb-20">
+                                    <input type="email" name="contactemail" value="" placeholder="Email">
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6 col-md-6">
+                                <div class="input-style mb-20">
+                                    <input name="contactphone" value="" placeholder="Phone" type="tel">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="input-style mb-20">
+                                    <input name="contactsubject" value="" placeholder="Subject" type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="textarea-style">
+<textarea name="contactmessage" placeholder="Message"></textarea>
+                                </div>
+                                <button class="submit submit-auto-width mt-30" type="submit">Send message</button>
+                            </div>
+                        </div>
+                        <div class="form-group text-left">
+                            <div class="contact-message contact-success-message mt-30" style="display: none"></div>
+                            <div class="contact-message contact-error-message mt-30" style="display: none"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Action("partialcat","Homeindex")

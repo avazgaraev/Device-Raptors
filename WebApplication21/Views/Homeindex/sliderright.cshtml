@@ -1,0 +1,20 @@
+﻿@using WebApplication21.Models
+@model List<sliderright>
+
+@foreach (var item in Model)
+{
+
+<div class="banner-img wow fadeIn animated banner-@item.sliderid">
+    <img class="border-radius-10" src="@item.sliderimg" alt="Gaming Area">
+    <div class="banner-text">
+        <span>@item.sliderheader</span>
+        <h4>
+            @item.slidertoprod
+        </h4>
+        <a href="products.html">
+            Shop now <i class="fa fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+}

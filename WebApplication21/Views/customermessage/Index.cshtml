@@ -22,270 +22,375 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
+<div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+    <div class="container">
+        <div class="header-wrap header-space-between">
+            <div class="logo logo-width-1">
+                <a href="~/Homeindex/Index"><img src="~/Content/storage/general/logom.png" alt="Device Raptors"></a>
+            </div>
+            @Html.Action("parcat", "Homeindex")
+            <div class="header-action-right">
+                <div class="header-action-2">
 
-    <section class="pt-150 pb-150">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 m-auto">
-                    <div class="row">
-                        
-                        <div class="col-md-12">
-                            <div class="tab-content dashboard-content">
-                                <div class="content-wrapper">
-                                    <!-- Content Header (Page header) -->
-                                    <section class="content-header">
-                                        <div class="container-fluid">
-                                            <div class="row mb-2">
-                                                <div class="col-sm-6">
-                                                    <h1>Inbox</h1>
-                                                </div>
-                                                
+
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="cart.html">
+                            <img alt="Cart" src="~/Content/images/icons/icon-cart.svg">
+                            <span class="pro-count blue">0</span>
+                        </a>
+                        <div class="cart-dropdown-wrap cart-dropdown-hm2">
+                            <span>No products in the cart.</span>
+                        </div>
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/customerpanel/Index">
+                            <img alt="Sign In" src="~/Content/images/icons/icon-user.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header-bottom header-bottom-bg-color sticky-bar gray-bg sticky-blue-bg">
+    <div class="container">
+        <div class="header-wrap header-space-between position-relative main-nav">
+            <div class="logo logo-width-1 d-block d-lg-none">
+                <a href="index.html"><img src="~/Content/storage/general/logo-light.png" alt="Device Raptors"></a>
+            </div>
+            <div class="main-categories-wrap d-none d-lg-block">
+                <a class="categories-button-active cant-close" href="#">
+                    <span class="fa fa-list"></span> Browse Categories <i class="down far fa-chevron-down"></i> <i class="up far fa-chevron-up"></i>
+                </a>
+                @Html.Action("parcat1", "Homeindex")
+            </div>
+
+            <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block main-menu-light-white hover-boder hover-boder-white">
+                <nav>
+                    <ul>
+                        <li class="">
+                            <a href="~/Homeindex/Index" class="active" target="_self">
+                                Home
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="~/Homeindex/Shop" target="_self">
+                                Shop
+                            </a>
+
+                        </li>
+
+
+                        <li class="">
+                            <a href="~/Homeindex/contact" target="_self">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hotline d-none d-lg-block">
+                <p><i class="fa fa-phone-alt"></i><span>Hotline</span> 1900 - 888</p>
+            </div>
+            <div class="header-action-right d-block d-lg-none">
+                <div class="header-action-2">
+
+                    @*<div class="header-action-icon-2">
+                            <a href="wishlist.html">
+                                <img alt="wowy" src="~/Content/images/icons/icon-heart-white.svg">
+                                <span class="pro-count white"> <span>0</span></span>
+                            </a>
+                        </div>*@
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="~/customersale/Index">
+                            <img alt="wowy" src="~/Content/images/icons/icon-cart-white.svg">
+                            <span class="pro-count white">0</span>
+                        </a>
+                        @*<div class="cart-dropdown-wrap cart-dropdown-hm2">
+                                <span>No products in the cart.</span>
+                            </div>*@
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/Homeindex/login">
+                            <img alt="wowy" src="~/Content/images/icons/icon-user-white.svg">
+                        </a>
+                    </div>
+                    <div class="header-action-icon-2 d-block d-lg-none">
+                        <div class="burger-icon burger-icon-white">
+                            <span class="burger-icon-top"></span>
+                            <span class="burger-icon-mid"></span>
+                            <span class="burger-icon-bottom"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </header>
+<section class="pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 m-auto">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="tab-content dashboard-content">
+                            <div class="content-wrapper">
+                                <!-- Content Header (Page header) -->
+                                <section class="content-header">
+                                    <div class="container-fluid">
+                                        <div class="row mb-2">
+                                            <div class="col-sm-6">
+                                                <h1>Inbox</h1>
                                             </div>
-                                        </div><!-- /.container-fluid -->
-                                    </section>
-                                    <!-- Main content -->
-                                    <section class="content">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <a href="compose.html" class="btn btn-primary btn-block mb-3">Compose</a>
 
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h3 class="card-title">Folders</h3>
-
-                                                        <div class="card-tools">
-                                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                                                <i class="fas fa-minus"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-body p-0">
-                                                        <ul class="nav nav-pills flex-column">
-                                                            <li class="nav-item active">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="fas fa-inbox"></i> Inbox
-                                                                    <span class="badge bg-primary float-right">12</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="far fa-envelope"></i> Sent
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="far fa-file-alt"></i> Drafts
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="fas fa-filter"></i> Junk
-                                                                    <span class="badge bg-warning float-right">65</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="far fa-trash-alt"></i> Trash
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- /.card-body -->
-                                                </div>
-                                                <!-- /.card -->
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h3 class="card-title">Labels</h3>
-
-                                                        <div class="card-tools">
-                                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                                                <i class="fas fa-minus"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-body p-0">
-                                                        <ul class="nav nav-pills flex-column">
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="far fa-circle text-danger"></i>
-                                                                    Important
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="far fa-circle text-warning"></i> Promotions
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a href="#" class="nav-link">
-                                                                    <i class="far fa-circle text-primary"></i>
-                                                                    Social
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- /.card-body -->
-                                                </div>
-                                                <!-- /.card -->
-                                            </div>
-                                            <!-- /.col -->
-                                            <div class="col-md-9">
-                                                <div class="card card-primary card-outline">
-                                                    <div class="card-header">
-                                                        <h3 class="card-title">Inbox</h3>
-
-                                                        <div class="card-tools">
-                                                            <div class="input-group input-group-sm">
-                                                                <input type="text" class="form-control" placeholder="Search Mail">
-                                                                <div class="input-group-append">
-                                                                    <div class="btn btn-primary">
-                                                                        <i class="fas fa-search"></i>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- /.card-tools -->
-                                                    </div>
-                                                    <!-- /.card-header -->
-                                                    <div class="card-body p-0">
-                                                        <div class="mailbox-controls">
-                                                            <!-- Check all button -->
-                                                            <button type="button" class="btn btn-default btn-sm checkbox-toggle">
-                                                                <i class="far fa-square"></i>
-                                                            </button>
-                                                            <div class="btn-group">
-                                                                <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                                                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
-                                                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
-                                                            </div>
-                                                            <!-- /.btn-group -->
-                                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
-                                                            <div class="float-right">
-                                                                1-50/200
-                                                                <div class="btn-group">
-                                                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
-                                                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-                                                                </div>
-                                                                <!-- /.btn-group -->
-                                                            </div>
-                                                            <!-- /.float-right -->
-                                                        </div>
-                                                        <div class="table-responsive mailbox-messages">
-                                                            <table class="table table-hover table-striped">
-                                                                <tbody>
-                                                                    @foreach (var item in Model)
-                                                                    {
-                                                                        <tr>
-
-                                                                            <td>
-                                                                                <div class="icheck-primary">
-                                                                                    <input type="checkbox" value="" id="check1">
-                                                                                    <label for="check1"></label>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                                                            <td class="mailbox-name"><a href="read-mail.html">@item.messagefrom</a></td>
-                                                                            <td class="mailbox-subject">
-                                                                                <b>@item.messagesubject</b> @item.messagetext.ToString() ...
-                                                                            </td>
-                                                                            <td class="mailbox-attachment"></td>
-                                                                            <td class="mailbox-date">@item.messagedate.ToShortDateString()</td>
-                                                                        </tr>
-                                                                    }
-                                                                   
-                                                                </tbody>
-                                                            </table>
-                                                            <!-- /.table -->
-                                                        </div>
-                                                        <!-- /.mail-box-messages -->
-                                                    </div>
-                                                    <!-- /.card-body -->
-                                                    <div class="card-footer p-0">
-                                                        <div class="mailbox-controls">
-                                                            <!-- Check all button -->
-                                                            <button type="button" class="btn btn-default btn-sm checkbox-toggle">
-                                                                <i class="far fa-square"></i>
-                                                            </button>
-                                                            <div class="btn-group">
-                                                                <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                                                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
-                                                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
-                                                            </div>
-                                                            <!-- /.btn-group -->
-                                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
-                                                            <div class="float-right">
-                                                                1-50/200
-                                                                <div class="btn-group">
-                                                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
-                                                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-                                                                </div>
-                                                                <!-- /.btn-group -->
-                                                            </div>
-                                                            <!-- /.float-right -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- /.card -->
-                                            </div>
-                                            <!-- /.col -->
                                         </div>
-                                        <!-- /.row -->
-                                    </section>
-                                    <!-- /.content -->
-                                </div>
+                                    </div><!-- /.container-fluid -->
+                                </section>
+                                <!-- Main content -->
+                                <section class="content">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a href="compose.html" class="btn btn-primary btn-block mb-3">Compose</a>
+
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Folders</h3>
+
+                                                    <div class="card-tools">
+                                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body p-0">
+                                                    <ul class="nav nav-pills flex-column">
+                                                        <li class="nav-item active">
+                                                            <a href="#" class="nav-link">
+                                                                <i class="fas fa-inbox"></i> Inbox
+                                                                <span class="badge bg-primary float-right">12</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link">
+                                                                <i class="far fa-envelope"></i> Sent
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link">
+                                                                <i class="far fa-file-alt"></i> Drafts
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link">
+                                                                <i class="fas fa-filter"></i> Junk
+                                                                <span class="badge bg-warning float-right">65</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link">
+                                                                <i class="far fa-trash-alt"></i> Trash
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- /.card-body -->
+                                            </div>
+                                            <!-- /.card -->
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Labels</h3>
+
+                                                    <div class="card-tools">
+                                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body p-0">
+                                                    <ul class="nav nav-pills flex-column">
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link">
+                                                                <i class="far fa-circle text-danger"></i>
+                                                                Important
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link">
+                                                                <i class="far fa-circle text-warning"></i> Promotions
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="#" class="nav-link">
+                                                                <i class="far fa-circle text-primary"></i>
+                                                                Social
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- /.card-body -->
+                                            </div>
+                                            <!-- /.card -->
+                                        </div>
+                                        <!-- /.col -->
+                                        <div class="col-md-9">
+                                            <div class="card card-primary card-outline">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Inbox</h3>
+
+                                                    <div class="card-tools">
+                                                        <div class="input-group input-group-sm">
+                                                            <input type="text" class="form-control" placeholder="Search Mail">
+                                                            <div class="input-group-append">
+                                                                <div class="btn btn-primary">
+                                                                    <i class="fas fa-search"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.card-tools -->
+                                                </div>
+                                                <!-- /.card-header -->
+                                                <div class="card-body p-0">
+                                                    <div class="mailbox-controls">
+                                                        <!-- Check all button -->
+                                                        <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                                            <i class="far fa-square"></i>
+                                                        </button>
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
+                                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
+                                                        </div>
+                                                        <!-- /.btn-group -->
+                                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+                                                        <div class="float-right">
+                                                            1-50/200
+                                                            <div class="btn-group">
+                                                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
+                                                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
+                                                            </div>
+                                                            <!-- /.btn-group -->
+                                                        </div>
+                                                        <!-- /.float-right -->
+                                                    </div>
+                                                    <div class="table-responsive mailbox-messages">
+                                                        <table class="table table-hover table-striped">
+                                                            <tbody>
+                                                                @foreach (var item in Model)
+                                                                {
+                                                                    <tr>
+
+                                                                        <td>
+                                                                            <div class="icheck-primary">
+                                                                                <input type="checkbox" value="" id="check1">
+                                                                                <label for="check1"></label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                                                        <td class="mailbox-name"><a href="read-mail.html">@item.messagefrom</a></td>
+                                                                        <td class="mailbox-subject">
+                                                                            <b>@item.messagesubject</b> @item.messagetext.ToString() ...
+                                                                        </td>
+                                                                        <td class="mailbox-attachment"></td>
+                                                                        <td class="mailbox-date">@item.messagedate.ToShortDateString()</td>
+                                                                    </tr>
+                                                                }
+
+                                                            </tbody>
+                                                        </table>
+                                                        <!-- /.table -->
+                                                    </div>
+                                                    <!-- /.mail-box-messages -->
+                                                </div>
+                                                <!-- /.card-body -->
+                                                <div class="card-footer p-0">
+                                                    <div class="mailbox-controls">
+                                                        <!-- Check all button -->
+                                                        <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                                            <i class="far fa-square"></i>
+                                                        </button>
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
+                                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
+                                                        </div>
+                                                        <!-- /.btn-group -->
+                                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+                                                        <div class="float-right">
+                                                            1-50/200
+                                                            <div class="btn-group">
+                                                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
+                                                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
+                                                            </div>
+                                                            <!-- /.btn-group -->
+                                                        </div>
+                                                        <!-- /.float-right -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.card -->
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                    <!-- /.row -->
+                                </section>
+                                <!-- /.content -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
-    <!-- Page Script -->
-    <script>
-        $(function () {
-            //Enable check and uncheck all functionality
-            $('.checkbox-toggle').click(function () {
-                var clicks = $(this).data('clicks')
-                if (clicks) {
-                    //Uncheck all checkboxes
-                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', false)
-                    $('.checkbox-toggle .far.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
-                } else {
-                    //Check all checkboxes
-                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', true)
-                    $('.checkbox-toggle .far.fa-square').removeClass('fa-square').addClass('fa-check-square')
-                }
-                $(this).data('clicks', !clicks)
-            })
-
-            //Handle starring for glyphicon and font awesome
-            $('.mailbox-star').click(function (e) {
-                e.preventDefault()
-                //detect type
-                var $this = $(this).find('a > i')
-                var glyph = $this.hasClass('glyphicon')
-                var fa = $this.hasClass('fa')
-
-                //Switch states
-                if (glyph) {
-                    $this.toggleClass('glyphicon-star')
-                    $this.toggleClass('glyphicon-star-empty')
-                }
-
-                if (fa) {
-                    $this.toggleClass('fa-star')
-                    $this.toggleClass('fa-star-o')
-                }
-            })
+    </div>
+</section>
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+<!-- Page Script -->
+<script>
+    $(function () {
+        //Enable check and uncheck all functionality
+        $('.checkbox-toggle').click(function () {
+            var clicks = $(this).data('clicks')
+            if (clicks) {
+                //Uncheck all checkboxes
+                $('.mailbox-messages input[type=\'checkbox\']').prop('checked', false)
+                $('.checkbox-toggle .far.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
+            } else {
+                //Check all checkboxes
+                $('.mailbox-messages input[type=\'checkbox\']').prop('checked', true)
+                $('.checkbox-toggle .far.fa-square').removeClass('fa-square').addClass('fa-check-square')
+            }
+            $(this).data('clicks', !clicks)
         })
-    </script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+
+        //Handle starring for glyphicon and font awesome
+        $('.mailbox-star').click(function (e) {
+            e.preventDefault()
+            //detect type
+            var $this = $(this).find('a > i')
+            var glyph = $this.hasClass('glyphicon')
+            var fa = $this.hasClass('fa')
+
+            //Switch states
+            if (glyph) {
+                $this.toggleClass('glyphicon-star')
+                $this.toggleClass('glyphicon-star-empty')
+            }
+
+            if (fa) {
+                $this.toggleClass('fa-star')
+                $this.toggleClass('fa-star-o')
+            }
+        })
+    })
+</script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
 
 
 

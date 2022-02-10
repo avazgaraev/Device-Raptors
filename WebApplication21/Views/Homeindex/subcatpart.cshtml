@@ -1,0 +1,9 @@
+﻿@using WebApplication21.Models
+@model List<subcategory>
+
+@foreach (var item in Model)
+{
+    @item.SubcategoryName.FirstOrDefault()
+    <meta itemprop="name" content="@item.SubcategoryName" />
+    <meta itemprop="position" content="3" />
+}

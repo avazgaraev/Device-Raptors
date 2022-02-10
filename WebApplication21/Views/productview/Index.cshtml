@@ -1,0 +1,912 @@
+﻿@model WebApplication21.Models.allproducts
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Shared/layoutviews.cshtml";
+}
+
+<div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+    <div class="container">
+        <div class="header-wrap header-space-between">
+            <div class="logo logo-width-1">
+                <a href="~/Homeindex/Index"><img src="~/Content/storage/general/logom.png" alt="Device Raptors"></a>
+            </div>
+            @Html.Action("parcat", "Homeindex")
+            <div class="header-action-right">
+                <div class="header-action-2">
+
+
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="cart.html">
+                            <img alt="Cart" src="~/Content/images/icons/icon-cart.svg">
+                            <span class="pro-count blue">0</span>
+                        </a>
+                        <div class="cart-dropdown-wrap cart-dropdown-hm2">
+                            <span>No products in the cart.</span>
+                        </div>
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/customerpanel/Index">
+                            <img alt="Sign In" src="~/Content/images/icons/icon-user.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header-bottom header-bottom-bg-color sticky-bar gray-bg sticky-blue-bg">
+    <div class="container">
+        <div class="header-wrap header-space-between position-relative main-nav">
+            <div class="logo logo-width-1 d-block d-lg-none">
+                <a href="index.html"><img src="~/Content/storage/general/logo-light.png" alt="Device Raptors"></a>
+            </div>
+            <div class="main-categories-wrap d-none d-lg-block">
+                <a class="categories-button-active cant-close" href="#">
+                    <span class="fa fa-list"></span> Browse Categories <i class="down far fa-chevron-down"></i> <i class="up far fa-chevron-up"></i>
+                </a>
+                @Html.Action("parcat1", "Homeindex")
+            </div>
+
+            <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block main-menu-light-white hover-boder hover-boder-white">
+                <nav>
+                    <ul>
+                        <li class="">
+                            <a href="~/Homeindex/Index" class="active" target="_self">
+                                Home
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="~/Homeindex/Shop" target="_self">
+                                Shop
+                            </a>
+
+                        </li>
+
+
+                        <li class="">
+                            <a href="~/Homeindex/contact" target="_self">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hotline d-none d-lg-block">
+                <p><i class="fa fa-phone-alt"></i><span>Hotline</span> 1900 - 888</p>
+            </div>
+            <div class="header-action-right d-block d-lg-none">
+                <div class="header-action-2">
+
+                    @*<div class="header-action-icon-2">
+                            <a href="wishlist.html">
+                                <img alt="wowy" src="~/Content/images/icons/icon-heart-white.svg">
+                                <span class="pro-count white"> <span>0</span></span>
+                            </a>
+                        </div>*@
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="~/customersale/Index">
+                            <img alt="wowy" src="~/Content/images/icons/icon-cart-white.svg">
+                            <span class="pro-count white">0</span>
+                        </a>
+                        @*<div class="cart-dropdown-wrap cart-dropdown-hm2">
+                                <span>No products in the cart.</span>
+                            </div>*@
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/Homeindex/login">
+                            <img alt="wowy" src="~/Content/images/icons/icon-user-white.svg">
+                        </a>
+                    </div>
+                    <div class="header-action-icon-2 d-block d-lg-none">
+                        <div class="burger-icon burger-icon-white">
+                            <span class="burger-icon-top"></span>
+                            <span class="burger-icon-mid"></span>
+                            <span class="burger-icon-bottom"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </header>
+<main class="main">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                @foreach (var item in Model.d1)
+                {
+
+                    <a href="~/homeindex/index" itemprop="item" title="Home">
+                        Home
+                        <meta itemprop="name" content="Home">
+                        <meta itemprop="position" content="1">
+                    </a>
+                    <span></span>
+                    <a href="~/Homeindex/shop" itemprop="item" title="Products">
+                        Products
+                        <meta itemprop="name" content="Products">
+                        <meta itemprop="position" content="2">
+                    </a>
+                    <span></span>
+                    <a href="~/Homeindex/prodcat/@item.Categoryid" itemprop="item" title="Computers">
+                        Computers
+                        <meta itemprop="name" content="Computers">
+                        <meta itemprop="position" content="3">
+                    </a>
+
+                    <span></span>
+                    @item.productsname
+                    <meta itemprop="name" content="@item.productsname">
+                    <meta itemprop="position" content="4">
+                }
+            </div>
+        </div>
+    </div>
+    <section class="mt-60 mb-60">
+        <div class="container">
+            <div class="product-detail accordion-detail">
+                <div class="row mb-50">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <!--<div class="detail-gallery">-->
+                        @*<div class="product-image-slider slick-initialized slick-slider" data-zoom-enable="true">
+            <div class="slick-list draggable">
+                    <div class="slick-track" style="opacity: 1; width: 5724px; transform: translate3d(-636px, 0px, 0px);">
+                        <figure class="border-radius-10 slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                            <img src="https://wowy.botble.com/storage/products/3-3-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-3.jpg">
+                        </figure><figure class="border-radius-10 slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 636px;" tabindex="0">
+                            <img src="https://wowy.botble.com/storage/products/3-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3.jpg">
+                        </figure><figure class="border-radius-10 slick-slide" data-slick-index="1" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                            <img src="https://wowy.botble.com/storage/products/3-1-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-1.jpg">
+                        </figure><figure class="border-radius-10 slick-slide" data-slick-index="2" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                            <img src="https://wowy.botble.com/storage/products/3-2-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-2.jpg">
+                        </figure><figure class="border-radius-10 slick-slide" data-slick-index="3" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                            <img src="https://wowy.botble.com/storage/products/3-3-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-3.jpg">
+                        </figure><figure class="border-radius-10 slick-slide slick-cloned" data-slick-index="4" id="" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                            <img src="https://wowy.botble.com/storage/products/3-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3.jpg">
+                        </figure><figure class="border-radius-10 slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                            <img src="https://wowy.botble.com/storage/products/3-1-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-1.jpg">
+                        </figure><figure class="border-radius-10 slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                            <img src="https://wowy.botble.com/storage/products/3-2-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-2.jpg">
+                        </figure><figure class="border-radius-10 slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                            <img src="https://wowy.botble.com/storage/products/3-3-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-3.jpg">
+                        </figure>
+                    </div>
+                </div>
+
+
+
+        </div>*@
+
+                        <!--@foreach (var item in Model.d3)
+    {
+        <div class="product-image-slider slick-initialized slick-slider" data-zoom-enable="true">
+            <div class="slick-list draggable">
+                <div class=" pl-15 pr-15">
+                    <div class="slick-list draggable">
+                        <div class="slick-track" style="opacity: 1; width: 488px; transform: translate3d(-122px, 0px, 0px);">
+                            <div class="slick-slide slick-active" data-slick-index="0" aria-hidden="false" style="width: 116px;" tabindex="-1">
+
+                                <img src="@item.imgname" alt="Boxed - Bluetooth Headphone">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <figure class="border-radius-10 slick-slide slick-cloned slick-current slick-active" data-slick-index="-1" id="" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                        <img src="@item.imgname" alt="Boxed - Bluetooth Headphone" data-zoom-image="@item.imgname">
+                    </figure>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+                }
+    </div>-->
+
+
+                        <div class="detail-gallery">
+
+                            <div class="product-image-slider slick-initialized slick-slider" data-zoom-enable="true">
+                                <div class="slick-list draggable">
+                                        @foreach (var item in Model.d3)
+                                        {
+                                    <div class="slick-track" style="opacity: 1; width: 5724px; transform: translate3d(-636px, 0px, 0px);">
+                                            <figure class="border-radius-10 slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                                                <img src="@item.imgname" alt="Boxed - Bluetooth Headphone" data-zoom-image="">
+                                            </figure>
+                                    </div>
+                                        }
+                                        @*<figure class="border-radius-10 slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 636px;" tabindex="0">
+                                            <img src="https://wowy.botble.com/storage/products/3-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3.jpg">
+                                        </figure><figure class="border-radius-10 slick-slide" data-slick-index="1" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                                            <img src="https://wowy.botble.com/storage/products/3-1-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-1.jpg">
+                                        </figure><figure class="border-radius-10 slick-slide" data-slick-index="2" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                                            <img src="https://wowy.botble.com/storage/products/3-2-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-2.jpg">
+                                        </figure><figure class="border-radius-10 slick-slide" data-slick-index="3" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                                            <img src="https://wowy.botble.com/storage/products/3-3-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-3.jpg">
+                                        </figure><figure class="border-radius-10 slick-slide slick-cloned" data-slick-index="4" id="" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                                            <img src="https://wowy.botble.com/storage/products/3-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3.jpg">
+                                        </figure><figure class="border-radius-10 slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                                            <img src="https://wowy.botble.com/storage/products/3-1-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-1.jpg">
+                                        </figure><figure class="border-radius-10 slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                                            <img src="https://wowy.botble.com/storage/products/3-2-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-2.jpg">
+                                        </figure><figure class="border-radius-10 slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true" style="width: 636px;" tabindex="-1">
+                                            <img src="https://wowy.botble.com/storage/products/3-3-800x800.jpg" alt="Boxed - Bluetooth Headphone" data-zoom-image="https://wowy.botble.com/storage/products/3-3.jpg">
+                                        </figure>*@
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="slider-nav-thumbnails pl-15 pr-15 slick-initialized slick-slider">
+                                <div class="slick-list draggable">
+
+                                    <div class="slick-track" style="opacity: 1; width: 488px; transform: translate3d(0px, 0px, 0px);">
+                                        @foreach (var item in Model.d3)
+                                        {
+
+                                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 116px;" tabindex="0">
+                                                <img src="@item.imgname" alt="Boxed - Bluetooth Headphone">
+                                            </div>
+
+                                        }
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="zoomContainer" style="transform: translateZ(0px); position: absolute; left: 92.4px; top: 325.6px; height: 636px; width: 636px;"><div class="zoomWindowContainer" style="width: 400px;"><div style="z-index: 999; overflow: hidden; margin-left: 0px; margin-top: 0px; background-position: -84.2956px -464px; width: 636px; height: 636px; float: left; cursor: crosshair; background-repeat: no-repeat; position: absolute; background-image: url(&quot;https://wowy.botble.com/storage/products/3.jpg&quot;); top: 0px; left: 0px; display: none;" class="zoomWindow">&nbsp;</div></div></div>
+
+
+                        @*<div class="single-social-share clearfix mt-50 mb-15">
+            <p class="mb-15 mt-30 font-sm"> <i class="fa fa-share-alt mr-5"></i> <span class="d-inline-block">Share this</span></p>
+            <div class="mobile-social-icon wow fadeIn  mb-sm-5 mb-md-0   animated" style="visibility: visible;">
+                <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwowy.botble.com%2Fproducts%2Fboxed-bluetooth-headphone" target="_blgiank"><i class="fab fa-facebook-f"></i></a>
+                <a class="twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwowy.botble.com%2Fproducts%2Fboxed-bluetooth-headphone&amp;text=Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline.
+                         1 Year AL Jazeera Brand Warranty
+                         30 Day Return Policy
+                         Cash on Delivery available
+                    " target="_blank"><i class="fab fa-twitter"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwowy.botble.com%2Fproducts%2Fboxed-bluetooth-headphone&amp;summary=Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline.
+                         1 Year AL Jazeera Brand Warranty
+                         30 Day Return Policy
+                         Cash on Delivery available
+                    " target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>*@
+
+                        @foreach (var item in Model.d1)
+                        {
+
+                            <a class="mail-to-friend font-sm color-grey" href="mailto:someone@example.com?subject=Buy Boxed - Bluetooth Headphone&amp;body=Buy this one: https://deviceraptors.com/productview/@item.productsid"><i class="far fa-envelope"></i> Email to a Friend</a>
+                        }
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="detail-info">
+                            @foreach (var item in Model.d1)
+                            {
+
+                                <h2 class="title-detail">@item.productsname</h2>
+                                <div class="product-detail-rating">
+                                    <div class="pro-details-brand">
+                                        <span class="d-inline-block">Brands:</span> @item.productmarka
+                                    </div>
+                                    @*<div class="product-rate-cover text-end">
+                    <div class="rating_wrap">
+                        <div class="rating">
+                            <div class="product_rate" style="width: 72%"></div>
+                        </div>
+                        <span class="rating_num">(5 reviews)</span>
+                    </div>
+                </div>*@
+                                </div>
+                                <div class="clearfix product-price-cover">
+                                    <div class="product-price primary-color float-left">
+                                        <ins><span class="text-brand">$@item.productndprice</span></ins>
+                                    </div>
+                                </div>
+                            }
+                            @foreach (var item in Model.d5)
+                            {
+
+                                <div class="bt-1 border-color-1 mt-15 mb-15"></div>
+                                <div class="short-desc mb-30">
+                                    <p>@item.shortdetail</p><ul>
+                                        <li class="mb-10"><i class="far fa-hourglass mr-5 text-brand"></i> 1 Year AL Jazeera Brand Warranty</li>
+                                        <li class="mb-10"><i class="far fa-paper-plane mr-5 text-brand"></i> 30 Day Return Policy</li>
+                                        <li><i class="far fa-address-card mr-5 text-brand"></i> Cash on Delivery available</li>
+                                    </ul>
+                                </div>
+                            }
+
+
+
+
+
+                            @foreach (var item1 in Model.d1)
+                            {
+                                <form action="~/basket/addbasket/@item1.productsid" method="post">
+                            <div class="pr_switch_wrap">
+                                <div class="product-attributes">
+                                    <div class="visual-swatches-wrapper attribute-swatches-wrapper form-group product__attribute product__color" data-type="visual">
+                                        <label class="attribute-name">Color</label>
+                                        <div class="attribute-values">
+                                            <ul class="visual-swatch color-swatch attribute-swatch">
+                                                @foreach (var item in Model.d2)
+                                                {
+                                                    if (item.availability == true)
+                                                    {
+                                                        <li data-slug="@item.colorname" data-id="3" class="attribute-swatch-item " title="@item.colorname">
+                                                            <div class="custom-radio">
+                                                                <label>
+                                                                    @Html.RadioButton("prodcolor", "", new { @class = "form-control product-filter-item" })
+                                                                    <input type="color"  value="@item.colorname" name="prodcolor"/>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    }
+                                                    else
+                                                    {
+
+                                                    }
+
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="text-swatches-wrapper attribute-swatches-wrapper attribute-swatches-wrapper form-group product__attribute product__color" data-type="text">
+                                        <label class="attribute-name">Size</label>
+
+                                        <div class="attribute-values">
+                                            <ul class="text-swatch attribute-swatch color-swatch">
+                                                @foreach (var item in Model.d4)
+                                                {
+                                                    if (item.availability == true)
+                                                    {
+
+                                                        <li data-slug="@item.sizename" class="attribute-swatch-item ">
+                                                            <div>
+                                                                <label>
+                                                                    <input class="product-filter-item" type="radio" name="attribute_size" value="8" required>
+                                                                        <input name="prodsize"/>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    }
+                                                    else
+                                                    {
+                                                        <li data-slug="@item.sizename" class="attribute-swatch-item  pe-none ">
+                                                            <div>
+                                                                <label>
+                                                                    <input class="product-filter-item" type="radio" name="attribute_size" value="10">
+                                                                    <span>@item.sizename</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    }
+
+                                                    @*<li data-slug="xxl" data-id="10" class="attribute-swatch-item  pe-none ">
+                                    <div>
+                                        <label>
+                                            <input class="product-filter-item" type="radio" name="attribute_size" value="10">
+                                            <span>XXL</span>
+                                        </label>
+                                    </div>
+                                </li>*@
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="number-items-available" style=" display: none;  margin-bottom: 10px;">
+                            </div>
+                            <div class="bt-1 border-color-1 mt-30 mb-30"></div>
+
+                                    <div class="detail-extralink">
+                                        <div class="detail-qty border radius">
+                                            <input value="1" name="salecount"/>
+                                        </div>
+                                        <div class="product-extra-link2  has-buy-now-button ">
+                                            <button type="submit" class="button  ">Add to cart</button>
+                                            @*<button class="button " type="submit">Buy Now</button>*@
+                                            @*<a aria-label="Add To Wishlist" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/3" href="#"><i class="far fa-heart"></i></a>
+                        <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/3"><i class="far fa-exchange-alt"></i></a>*@
+                                        </div>
+                                    </div>
+
+                                </form>
+                            }
+                            @*<ul class="product-meta font-xs color-grey mt-50">
+            <li class="mb-5"><span class="d-inline-block" id="product-sku">SKU</span>: <span>HS-177-A0</span></li>
+            <li class="mb-5">
+                <span class="d-inline-block">Categories:</span>
+                <a href="https://wowy.botble.com/product-categories/monitors" title="Monitors">Monitors</a>
+            </li>
+            <li class="mb-5">
+                <span class="d-inline-block">Tags:</span>
+                <a href="https://wowy.botble.com/product-tags/bags" rel="tag" title="Bags">Bags</a>, <a href="https://wowy.botble.com/product-tags/shoes" rel="tag" title="Shoes">Shoes</a>
+            </li>
+            <li><span class="d-inline-block">Availability:</span> <span class="in-stock text-success ml-5"><span class="text-success">In stock</span></span></li>
+        </ul>*@
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tab-style3">
+                    <ul class="nav nav-tabs text-uppercase">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="Description-tab" data-bs-toggle="tab" href="#Description">Description</a>
+                        </li>
+                        @*<li class="nav-item">
+                            <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews">Reviews (5)</a>
+                        </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-faq">Questions and Answers</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content shop_info_tab entry-main-content">
+                        <div class="tab-pane fade show active" id="Description">
+                            @foreach (var item in Model.d5)
+                            {
+
+                                <p>@item.productdetail</p>
+                            }
+                            <br>
+                            <div class="facebook-comment">
+                                <div class="fb-comments" data-href="https://wowy.botble.com/products/boxed-bluetooth-headphone" data-numposts="5" data-width="100%"></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-faq">
+                            <div class="accordion" id="faq-accordion">
+                                <div class="card">
+                                    <div class="card-header" id="heading-faq-0">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-0" aria-expanded="true" aria-controls="collapse-faq-0">
+                                                What Shipping Methods Are Available?
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse-faq-0" class="collapse  show " aria-labelledby="heading-faq-0" data-parent="#faq-accordion">
+                                        <div class="card-body">
+                                            Paypal, MasterCard, Visa
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="heading-faq-1">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left  collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-1" aria-expanded="true" aria-controls="collapse-faq-1">
+                                                Do You Ship Internationally?
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse-faq-1" class="collapse " aria-labelledby="heading-faq-1" data-parent="#faq-accordion">
+                                        <div class="card-body">
+                                            No, only inside of America.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="heading-faq-2">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left  collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-2" aria-expanded="true" aria-controls="collapse-faq-2">
+                                                How Long Will It Take To Get My Package?
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse-faq-2" class="collapse " aria-labelledby="heading-faq-2" data-parent="#faq-accordion">
+                                        <div class="card-body">
+                                            Swag slow-carb quinoa VHS typewriter pork belly brunch, paleo single-origin coffee Wes Anderson. Flexitarian Pitchfork forage, literally paleo fap pour-over. Wes Anderson Pinterest YOLO fanny pack meggings, deep v XOXO chambray sustainable slow-carb raw denim church-key fap chillwave Etsy. +1 typewriter kitsch, American Apparel tofu Banksy Vice.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-header" id="heading-faq-4">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left  collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-4" aria-expanded="true" aria-controls="collapse-faq-4">
+                                                Is Buying On-Line Safe?
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapse-faq-4" class="collapse " aria-labelledby="heading-faq-4" data-parent="#faq-accordion">
+                                        <div class="card-body">
+                                            Art party authentic freegan semiotics jean shorts chia cred. Neutra Austin roof party Brooklyn, synth Thundercats swag 8-bit photo booth. Plaid letterpress leggings craft beer meh ethical Pinterest.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="tab-pane fade" id="Reviews">
+                            <div class="my-3">
+                                <h4>Images from customer (10)</h4>
+                                <div class="block--review">
+                                    <div class="block__images row m-0 block__images_total">
+                                        <a href="https://wowy.botble.com/storage/products/2.jpg" class="col-lg-1 col-sm-2 col-3 more-review-images ">
+                                            <div class="border position-relative rounded">
+                                                <img src="https://wowy.botble.com/storage/products/2-150x150.jpg" alt="Boxed - Bluetooth Headphone" class="img-responsive rounded h-100">
+                                            </div>
+                                        </a>
+                                        <a href="https://wowy.botble.com/storage/products/7.jpg" class="col-lg-1 col-sm-2 col-3 more-review-images ">
+                                            <div class="border position-relative rounded">
+                                                <img src="https://wowy.botble.com/storage/products/7-150x150.jpg" alt="Boxed - Bluetooth Headphone" class="img-responsive rounded h-100">
+                                            </div>
+                                        </a>
+                                        <a href="https://wowy.botble.com/storage/products/2.jpg" class="col-lg-1 col-sm-2 col-3 more-review-images ">
+                                            <div class="border position-relative rounded">
+                                                <img src="https://wowy.botble.com/storage/products/2-150x150.jpg" alt="Boxed - Bluetooth Headphone" class="img-responsive rounded h-100">
+                                            </div>
+                                        </a>
+                                        <a href="https://wowy.botble.com/storage/products/14.jpg" class="col-lg-1 col-sm-2 col-3 more-review-images ">
+                                            <div class="border position-relative rounded">
+                                                <img src="https://wowy.botble.com/storage/products/14-150x150.jpg" alt="Boxed - Bluetooth Headphone" class="img-responsive rounded h-100">
+                                            </div>
+                                        </a>
+                                        <a href="https://wowy.botble.com/storage/products/1.jpg" class="col-lg-1 col-sm-2 col-3 more-review-images ">
+                                            <div class="border position-relative rounded">
+                                                <img src="https://wowy.botble.com/storage/products/1-150x150.jpg" alt="Boxed - Bluetooth Headphone" class="img-responsive rounded h-100">
+                                            </div>
+                                        </a>
+                                        <a href="https://wowy.botble.com/storage/products/1.jpg" class="col-lg-1 col-sm-2 col-3 more-review-images ">
+                                            <div class="border position-relative rounded">
+                                                <img src="https://wowy.botble.com/storage/products/1-150x150.jpg" alt="Boxed - Bluetooth Headphone" class="img-responsive rounded h-100">
+                                                <span>+4</span>
+                                            </div>
+                                        </a>
+                                        <a href="https://wowy.botble.com/storage/products/7.jpg" class="col-lg-1 col-sm-2 col-3 more-review-images  d-none ">
+                                            <div class="border position-relative rounded">
+                                                <img src="https://wowy.botble.com/storage/products/7-150x150.jpg" alt="Boxed - Bluetooth Headphone" class="img-responsive rounded h-100">
+                                            </div>
+                                        </a>
+                                        <a href="https://wowy.botble.com/storage/products/1.jpg" class="col-lg-1 col-sm-2 col-3 more-review-images  d-none ">
+                                            <div class="border position-relative rounded">
+                                                <img src="https://wowy.botble.com/storage/products/1-150x150.jpg" alt="Boxed - Bluetooth Headphone" class="img-responsive rounded h-100">
+                                            </div>
+                                        </a>
+                                        <a href="https://wowy.botble.com/storage/products/6.jpg" class="col-lg-1 col-sm-2 col-3 more-review-images  d-none ">
+                                            <div class="border position-relative rounded">
+                                                <img src="https://wowy.botble.com/storage/products/6-150x150.jpg" alt="Boxed - Bluetooth Headphone" class="img-responsive rounded h-100">
+                                            </div>
+                                        </a>
+                                        <a href="https://wowy.botble.com/storage/products/13.jpg" class="col-lg-1 col-sm-2 col-3 more-review-images  d-none ">
+                                            <div class="border position-relative rounded">
+                                                <img src="https://wowy.botble.com/storage/products/13-150x150.jpg" alt="Boxed - Bluetooth Headphone" class="img-responsive rounded h-100">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comments-area">
+                                <div class="row">
+                                    <div id="product-reviews" class="col-lg-8 block--product-reviews"><h4 class="mb-30">Customer questions &amp; answers</h4> <div class="block__content"><div class="block--review"><div class="block__header"><div class="block__image"><img src="https://wowy.botble.com/storage/customers/7-150x150.jpg" alt="Wiley Conn DVM" width="60"></div> <div class="block__info"><div class="rating_wrap"><div class="rating"><div class="product_rate" style="width: 100%;"></div></div></div> <div class="my-2"><span class="d-block lh-1"><strong>Wiley Conn DVM</strong>--> <!----><!--</span> <small class="text-secondary lh-1">3 weeks ago</small></div> <div class="block__content"><p>Best ecommerce CMS online store!</p></div> <div class="block__images"><a href="https://wowy.botble.com/storage/products/2.jpg"><img src="https://wowy.botble.com/storage/products/2-150x150.jpg" alt="https://wowy.botble.com/storage/products/2-150x150.jpg" class="img-responsive rounded h-100"></a><a href="https://wowy.botble.com/storage/products/7.jpg"><img src="https://wowy.botble.com/storage/products/7-150x150.jpg" alt="https://wowy.botble.com/storage/products/7-150x150.jpg" class="img-responsive rounded h-100"></a></div></div></div></div><div class="block--review"><div class="block__header"><div class="block__image"><img src="https://wowy.botble.com/storage/customers/7-150x150.jpg" alt="Prof. Sigmund Stoltenberg" width="60"></div> <div class="block__info"><div class="rating_wrap"><div class="rating"><div class="product_rate" style="width: 100%;"></div></div></div> <div class="my-2"><span class="d-block lh-1"><strong>Prof. Sigmund Stoltenberg</strong>--> <!----><!--</span> <small class="text-secondary lh-1">3 weeks ago</small></div> <div class="block__content"><p>Second or third time that I buy a Botble product, happy with the products and support. You guys do a good job :)</p></div>--> <!----><!--</div></div></div><div class="block--review"><div class="block__header"><div class="block__image"><img src="https://wowy.botble.com/storage/customers/7-150x150.jpg" alt="Prof. Sigmund Stoltenberg" width="60"></div> <div class="block__info"><div class="rating_wrap"><div class="rating"><div class="product_rate" style="width: 40%;"></div></div></div> <div class="my-2"><span class="d-block lh-1"><strong>Prof. Sigmund Stoltenberg</strong>--> <!----><!--</span> <small class="text-secondary lh-1">3 weeks ago</small></div> <div class="block__content"><p>The script is the best of its class, fast, easy to implement and work with , and the most important thing is the great support team , Recommend with no doubt.</p></div> <div class="block__images"><a href="https://wowy.botble.com/storage/products/1.jpg"><img src="https://wowy.botble.com/storage/products/1-150x150.jpg" alt="https://wowy.botble.com/storage/products/1-150x150.jpg" class="img-responsive rounded h-100"></a></div></div></div></div><div class="block--review"><div class="block__header"><div class="block__image"><img src="https://wowy.botble.com/storage/customers/8-150x150.jpg" alt="Dr. Abdiel Parker" width="60"></div> <div class="block__info"><div class="rating_wrap"><div class="rating"><div class="product_rate" style="width: 100%;"></div></div></div> <div class="my-2"><span class="d-block lh-1"><strong>Dr. Abdiel Parker</strong>--> <!----><!--</span> <small class="text-secondary lh-1">3 weeks ago</small></div> <div class="block__content"><p>Second or third time that I buy a Botble product, happy with the products and support. You guys do a good job :)</p></div> <div class="block__images"><a href="https://wowy.botble.com/storage/products/1.jpg"><img src="https://wowy.botble.com/storage/products/1-150x150.jpg" alt="https://wowy.botble.com/storage/products/1-150x150.jpg" class="img-responsive rounded h-100"></a><a href="https://wowy.botble.com/storage/products/7.jpg"><img src="https://wowy.botble.com/storage/products/7-150x150.jpg" alt="https://wowy.botble.com/storage/products/7-150x150.jpg" class="img-responsive rounded h-100"></a></div></div></div></div><div class="block--review"><div class="block__header"><div class="block__image"><img src="https://wowy.botble.com/storage/customers/3-150x150.jpg" alt="Ms. Theodora Boyer I" width="60"></div> <div class="block__info"><div class="rating_wrap"><div class="rating"><div class="product_rate" style="width: 20%;"></div></div></div> <div class="my-2"><span class="d-block lh-1"><strong>Ms. Theodora Boyer I</strong> <span class="ml-2">✅ Purchased 3 weeks ago</span></span> <small class="text-secondary lh-1">3 weeks ago</small></div> <div class="block__content"><p>Second or third time that I buy a Botble product, happy with the products and support. You guys do a good job :)</p></div> <div class="block__images"><a href="https://wowy.botble.com/storage/products/1.jpg"><img src="https://wowy.botble.com/storage/products/1-150x150.jpg" alt="https://wowy.botble.com/storage/products/1-150x150.jpg" class="img-responsive rounded h-100"></a><a href="https://wowy.botble.com/storage/products/6.jpg"><img src="https://wowy.botble.com/storage/products/6-150x150.jpg" alt="https://wowy.botble.com/storage/products/6-150x150.jpg" class="img-responsive rounded h-100"></a><a href="https://wowy.botble.com/storage/products/13.jpg"><img src="https://wowy.botble.com/storage/products/13-150x150.jpg" alt="https://wowy.botble.com/storage/products/13-150x150.jpg" class="img-responsive rounded h-100"></a></div></div></div></div>--> <!----> <!----> <!--<div class="pagination-area mt-15 mb-md-5 mb-lg-0">--><!----><!--</div></div></div>
+                                    <div class="col-lg-4">
+                                        <h4 class="mb-30">Customer reviews</h4>
+                                        <div class="d-flex mb-30">
+                                            <div class="rating_wrap">
+                                                <div class="rating">
+                                                    <div class="product_rate" style="width: 72%"></div>
+                                                </div>
+                                                <span class="rating_num">(3.60 out of 5)</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <span>5 star</span>
+                                            <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                                        </div>
+                                        <div class="progress">
+                                            <span>4 star</span>
+                                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                        </div>
+                                        <div class="progress">
+                                            <span>3 star</span>
+                                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                        </div>
+                                        <div class="progress">
+                                            <span>2 star</span>
+                                            <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                                        </div>
+                                        <div class="progress">
+                                            <span>1 star</span>
+                                            <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment-form">
+                                <h4 class="mb-15">Add a review</h4>
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-12">
+                                        <form method="POST" action="https://wowy.botble.com/review/create" accept-charset="UTF-8" class="form-contact comment_form form-review-product" enctype="multipart/form-data">
+                                            <input name="_token" type="hidden" value="EJwfHlXTD2flCUjBxfUf0VLw8lfdpuKrGofCx32R">
+                                            <p class="text-danger">Please <a href="https://wowy.botble.com/login">login</a> to write review!</p>
+                                            <input type="hidden" name="product_id" value="3">
+                                            <div class="form-group">
+                                                <label>Quality</label>
+                                                <div class="rate">
+                                                    <input type="radio" id="star1" name="star" value="1">
+                                                    <label for="star1" title="text">1 star</label>
+                                                    <input type="radio" id="star2" name="star" value="2">
+                                                    <label for="star2" title="text">2 star</label>
+                                                    <input type="radio" id="star3" name="star" value="3">
+                                                    <label for="star3" title="text">3 star</label>
+                                                    <input type="radio" id="star4" name="star" value="4">
+                                                    <label for="star4" title="text">4 star</label>
+                                                    <input type="radio" id="star5" name="star" value="5" checked="">
+                                                    <label for="star5" title="text">5 star</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+<textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9" placeholder="Write Comment" disabled=""></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <script type="text/x-custom-template" id="review-image-template">
+                                                    <span class="image-viewer__item" data-id="__id__">
+                                                        <img src="https://wowy.botble.com/vendor/core/core/base/images/placeholder.png" alt="Preview" class="img-responsive d-block">
+                                                        <span class="image-viewer__icon-remove">
+                                                            <i class="far fa-times"></i>
+                                                        </span>
+                                                    </span>
+                                                </script>
+                                                <div class="image-upload__viewer d-flex">
+                                                    <div class="image-viewer__list position-relative">
+                                                        <div class="image-upload__uploader-container">
+                                                            <div class="d-table">
+                                                                <div class="image-upload__uploader">
+                                                                    <i class="far fa-image image-upload__icon"></i>
+                                                                    <div class="image-upload__text">Upload photos</div>
+                                                                    <input type="file" name="images[]" data-max-files="6" class="image-upload__file-input" accept="image/png,image/jpeg,image/jpg" multiple="multiple" data-max-size="2048" data-max-size-message="The __attribute__ must not be greater than __max__ kilobytes.">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="loading">
+                                                            <div class="half-circle-spinner">
+                                                                <div class="circle circle-1"></div>
+                                                                <div class="circle circle-2"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span class="help-block d-inline-block">
+                                                        You can upload up to 6 photos, each photo maximum size is 2048 kilobytes
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="button button-contactForm" disabled="">Submit Review</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+                @*<div class="row mt-60">
+                        <div class="col-12">
+                            <h3 class="section-title style-1 mb-30">You may also like</h3>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+                            <div class="product-cart-wrap mb-30">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="https://wowy.botble.com/products/camera-hikvision-hk-35vs8">
+                                            <img class="default-img" src="https://wowy.botble.com/storage/products/5-400x400.jpg" alt="Camera Hikvision HK-35VS8">
+                                            <img class="hover-img" src="https://wowy.botble.com/storage/products/5-1-400x400.jpg" alt="Camera Hikvision HK-35VS8">
+                                        </a>
+                                    </div>
+                                    <div class="product-action-1">
+                                        <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/5"><i class="far fa-eye"></i></a>
+                                        <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/5"><i class="far fa-heart"></i></a>
+                                        <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/5"><i class="far fa-exchange-alt"></i></a>
+                                    </div>
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="product-category">
+                                        <a href="https://wowy.botble.com/product-categories/sport-outdoor">Sport &amp; Outdoor</a>
+                                    </div>
+                                    <h2><a href="https://wowy.botble.com/products/camera-hikvision-hk-35vs8">Camera Hikvision HK-35VS8</a></h2>
+                                    <div class="rating_wrap">
+                                        <div class="rating">
+                                            <div class="product_rate" style="width: 68%"></div>
+                                        </div>
+                                        <span class="rating_num">(5)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$50.00</span>
+                                    </div>
+                                    <div class="product-action-1 show">
+                                        <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="5" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+                            <div class="product-cart-wrap mb-30">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="https://wowy.botble.com/products/apple-iphone-13-plus">
+                                            <img class="default-img" src="https://wowy.botble.com/storage/products/8-400x400.jpg" alt="Apple iPhone 13 Plus">
+                                            <img class="hover-img" src="https://wowy.botble.com/storage/products/8-1-400x400.jpg" alt="Apple iPhone 13 Plus">
+                                        </a>
+                                    </div>
+                                    <div class="product-action-1">
+                                        <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/8"><i class="far fa-eye"></i></a>
+                                        <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/8"><i class="far fa-heart"></i></a>
+                                        <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/8"><i class="far fa-exchange-alt"></i></a>
+                                    </div>
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                        <span class="hot">-26%</span>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h2><a href="https://wowy.botble.com/products/apple-iphone-13-plus">Apple iPhone 13 Plus</a></h2>
+                                    <div class="rating_wrap">
+                                        <div class="rating">
+                                            <div class="product_rate" style="width: 47.5%"></div>
+                                        </div>
+                                        <span class="rating_num">(8)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$82.88</span>
+                                        <span class="old-price">$112.00</span>
+                                    </div>
+                                    <div class="product-action-1 show">
+                                        <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="8" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+                            <div class="product-cart-wrap mb-30">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="https://wowy.botble.com/products/apple-watch-serial-7">
+                                            <img class="default-img" src="https://wowy.botble.com/storage/products/11-400x400.jpg" alt="Apple Watch Serial 7">
+                                            <img class="hover-img" src="https://wowy.botble.com/storage/products/11-1-400x400.jpg" alt="Apple Watch Serial 7">
+                                        </a>
+                                    </div>
+                                    <div class="product-action-1">
+                                        <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/11"><i class="far fa-eye"></i></a>
+                                        <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/11"><i class="far fa-heart"></i></a>
+                                        <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/11"><i class="far fa-exchange-alt"></i></a>
+                                    </div>
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="product-category">
+                                        <a href="https://wowy.botble.com/product-categories/laptop">Laptop</a>
+                                    </div>
+                                    <h2><a href="https://wowy.botble.com/products/apple-watch-serial-7">Apple Watch Serial 7</a></h2>
+                                    <div class="rating_wrap">
+                                        <div class="rating">
+                                            <div class="product_rate" style="width: 68%"></div>
+                                        </div>
+                                        <span class="rating_num">(5)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$125.00</span>
+                                    </div>
+                                    <div class="product-action-1 show">
+                                        <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="11" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+                            <div class="product-cart-wrap mb-30">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="https://wowy.botble.com/products/leather-watch-band-serial-3">
+                                            <img class="default-img" src="https://wowy.botble.com/storage/products/19-400x400.jpg" alt="Leather Watch Band Serial 3">
+                                            <img class="hover-img" src="https://wowy.botble.com/storage/products/19-1-400x400.jpg" alt="Leather Watch Band Serial 3">
+                                        </a>
+                                    </div>
+                                    <div class="product-action-1">
+                                        <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/19"><i class="far fa-eye"></i></a>
+                                        <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/19"><i class="far fa-heart"></i></a>
+                                        <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/19"><i class="far fa-exchange-alt"></i></a>
+                                    </div>
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="product-category">
+                                        <a href="https://wowy.botble.com/product-categories/office-electronic">Office Electronic</a>
+                                    </div>
+                                    <h2><a href="https://wowy.botble.com/products/leather-watch-band-serial-3">Leather Watch Band Serial 3</a></h2>
+                                    <div class="rating_wrap">
+                                        <div class="rating">
+                                            <div class="product_rate" style="width: 60%"></div>
+                                        </div>
+                                        <span class="rating_num">(6)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$117.00</span>
+                                    </div>
+                                    <div class="product-action-1 show">
+                                        <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="19" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                <div id="related-products" class="row mt-60">
+                    <div class="col-12"><h3 class="section-title style-1 mb-30">Related products</h3></div>
+                    <div class="row">
+                        <div class="fl_center"><!----></div>
+                        @foreach (var item in Model.d1)
+                        {
+
+
+                            <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+                                <div class="product-cart-wrap mb-30">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="~/productview/Index/@item.productsid">
+                                                <img class="default-img" src="@item.productimg" alt="Smart Home Speaker">
+                                                <img class="hover-img" src="@item.productimg" alt="Smart Home Speaker">
+                                            </a>
+                                        </div>
+                                        @*<div class="product-action-1">
+                                                <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/1"><i class="far fa-eye"></i></a>
+                                                <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/1"><i class="far fa-heart"></i></a>
+                                                <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/1"><i class="far fa-exchange-alt"></i></a>
+                                            </div>*@
+                                        <div class="product-badges product-badges-position product-badges-mrg">
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap">
+                                        <div class="product-category">
+                                            <a href="~/Homeindex/prodcat/@item.Categoryid">@item.Categoryname</a>
+                                        </div>
+                                        <h2><a href="~/productview/Index/@item.productsid">@item.productsname</a></h2>
+
+                                        @*<div class="rating_wrap">
+                                                <div class="rating">
+                                                    <div class="product_rate" style="width: 55%"></div>
+                                                </div>
+                                                <span class="rating_num">(4)</span>
+                                            </div>*@
+
+
+
+                                        <div class="product-price">
+                                            <span>$@item.productndprice</span>
+                                        </div>
+
+
+
+                                        <div class="product-action-1 show">
+                                            <a aria-label="Add To Cart" class="action-btn hover-up" data-id="1" href="~/basket/addbasket/@item.productsid"><i class="far fa-shopping-bag"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@Html.Action("partialcat", "Homeindex")
+
+<script src="~/Content/js/components474.js"></script>

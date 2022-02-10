@@ -17,5 +17,12 @@ namespace WebApplication21.Models
         [Column(TypeName = "Varchar")]
         [StringLength(3000)]
         public string productdetail { get; set; }
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(400)]
+        public string shortdetail { get; set; }
+
+        public int productid{ get; set; }
+        public virtual products products { get; set; }
     }
 }

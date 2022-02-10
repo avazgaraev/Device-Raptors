@@ -1,0 +1,9 @@
+﻿@using WebApplication21.Models
+@model List<subcategory>
+
+@foreach (var item1 in Model)
+{
+
+    <li><a class="dropdown-item nav-link nav_item" href="~/Homeindex/prodcat/@item1.CategoryId">@item1.SubcategoryName</a></li>
+}
+

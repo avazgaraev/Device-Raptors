@@ -14,8 +14,8 @@ namespace WebApplication21.Models
         //customer
         public DateTime saledate{ get; set; }
         public int salecount{ get; set; }
-        public int saleprice{ get; set; }
-        public int saleallprice{ get; set; }
+        public decimal saleprice{ get; set; }
+        public decimal saleallprice{ get; set; }
 
         public int productsid { get; set; }
         public virtual products products { get; set; }
@@ -25,6 +25,12 @@ namespace WebApplication21.Models
 
         public string kargono { get; set; }
         public virtual kargo Kargo{ get; set; }
+
+        public ICollection<prodcolor> prodcolors { get; set; }
+
+        public string prodcolor { get; set; } 
+
+        public ICollection<prodsize> prodsizes{ get; set; }
 
         public string saleno { get; set; }
     }

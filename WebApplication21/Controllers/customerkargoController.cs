@@ -7,6 +7,7 @@ using WebApplication21.Models;
 
 namespace WebApplication21.Controllers
 {
+    [Authorize]
     public class customerkargoController : Controller
     {
         context c = new context();
@@ -19,7 +20,7 @@ namespace WebApplication21.Controllers
         }
         public ActionResult cuskargodetail(string id)
         {
-            var values = c.kargofollows.FirstOrDefault(x => x.kargono == id);
+            var values = c.Salemoves.FirstOrDefault(x => x.saleno == id);
             return View(values);
         }
         public PartialViewResult partialname()

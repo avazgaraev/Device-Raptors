@@ -1,0 +1,31 @@
+﻿@using WebApplication21.Models
+@model List<contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Mail</th>
+        <th>Phone</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Contact date</th>
+    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.contactname</td>
+                <td>@item.contactsurname</td>
+                <td>@item.contactemail</td>
+                <td>@item.contactphone</td>
+                <td>@item.contactsubject</td>
+                <td>@item.contactmessage</td>
+                <td>@item.contactdate</td>
+            </tr>
+        }
+</table>
+

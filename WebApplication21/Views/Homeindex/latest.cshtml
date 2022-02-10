@@ -1,0 +1,57 @@
+﻿@using WebApplication21.Models
+@model List<products>
+
+
+<div id="new-arrival" role="tabpanel" aria-labelledby="new-arrival-tab" class="tab-pane fade show active">
+    <div class="row product-grid-4">
+        @foreach (var item in Model)
+        {
+
+
+        <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+            <div class="product-cart-wrap mb-30">
+                <div class="product-img-action-wrap">
+                    <div class="product-img product-img-zoom">
+                        <a href="~/productview/Index/@item.productsid">
+                            <img class="default-img" src="@item.productimg" alt="Smart Home Speaker">
+                            <img class="hover-img" src="@item.productimg" lt="Smart Home Speaker">
+                        </a>
+                    </div>
+                    @*<div class="product-action-1">
+                        <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/1"><i class="far fa-eye"></i></a>
+                        <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/1"><i class="far fa-heart"></i></a>
+                        <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/1"><i class="far fa-exchange-alt"></i></a>
+                    </div>*@
+                    <div class="product-badges product-badges-position product-badges-mrg">
+                    </div>
+                </div>
+                <div class="product-content-wrap">
+                    <div class="product-category">
+                        <a href="~/Homeindex/prodcat/@item.Categoryid">@item.Categoryname</a>
+                    </div>
+                    <h2><a href="~/productview/Index/@item.productsid">@item.productsname</a></h2>
+
+                    @*<div class="rating_wrap">
+                        <div class="rating">
+                            <div class="product_rate" style="width: 30%"></div>
+                        </div>
+                        <span class="rating_num">(2)</span>
+                    </div>*@
+
+
+
+                    <div class="product-price">
+                        <span>$@item.productndprice</span>
+                    </div>
+
+
+
+                    <div class="product-action-1 show">
+                        <a aria-label="Add To Cart" class="action-btn hover-up" data-id="@item.productsid" href="~/customersale/Index"><i class="far fa-shopping-bag"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

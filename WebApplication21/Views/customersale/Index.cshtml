@@ -6,7 +6,111 @@
     ViewBag.Title = "Index";
     Layout = "~/Shared/layoutviews.cshtml";
 }
+<div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+    <div class="container">
+        <div class="header-wrap header-space-between">
+            <div class="logo logo-width-1">
+                <a href="~/Homeindex/Index"><img src="~/Content/storage/general/logom.png" alt="Device Raptors"></a>
+            </div>
+            @Html.Action("parcat", "Homeindex")
+            <div class="header-action-right">
+                <div class="header-action-2">
 
+
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="cart.html">
+                            <img alt="Cart" src="~/Content/images/icons/icon-cart.svg">
+                            <span class="pro-count blue">0</span>
+                        </a>
+                        <div class="cart-dropdown-wrap cart-dropdown-hm2">
+                            <span>No products in the cart.</span>
+                        </div>
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/customerpanel/Index">
+                            <img alt="Sign In" src="~/Content/images/icons/icon-user.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header-bottom header-bottom-bg-color sticky-bar gray-bg sticky-blue-bg">
+    <div class="container">
+        <div class="header-wrap header-space-between position-relative main-nav">
+            <div class="logo logo-width-1 d-block d-lg-none">
+                <a href="index.html"><img src="~/Content/storage/general/logo-light.png" alt="Device Raptors"></a>
+            </div>
+            <div class="main-categories-wrap d-none d-lg-block">
+                <a class="categories-button-active" href="#">
+                    <span class="fa fa-list"></span> Browse Categories <i class="down far fa-chevron-down"></i> <i class="up far fa-chevron-up"></i>
+                </a>
+                @Html.Action("parcat1", "Homeindex")
+            </div>
+
+            <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block main-menu-light-white hover-boder hover-boder-white">
+                <nav>
+                    <ul>
+                        <li class="">
+                            <a href="~/Homeindex/Index" class="active" target="_self">
+                                Home
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="~/Homeindex/Shop" target="_self">
+                                Shop
+                            </a>
+
+                        </li>
+
+
+                        <li class="">
+                            <a href="~/Homeindex/contact" target="_self">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hotline d-none d-lg-block">
+                <p><i class="fa fa-phone-alt"></i><span>Hotline</span> 1900 - 888</p>
+            </div>
+            <div class="header-action-right d-block d-lg-none">
+                <div class="header-action-2">
+
+                    @*<div class="header-action-icon-2">
+                            <a href="wishlist.html">
+                                <img alt="wowy" src="~/Content/images/icons/icon-heart-white.svg">
+                                <span class="pro-count white"> <span>0</span></span>
+                            </a>
+                        </div>*@
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="~/basket/Index">
+                            <img alt="wowy" src="~/Content/images/icons/icon-cart-white.svg">
+                        </a>
+                        @*<div class="cart-dropdown-wrap cart-dropdown-hm2">
+                                <span>No products in the cart.</span>
+                            </div>*@
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/Homeindex/login">
+                            <img alt="wowy" src="~/Content/images/icons/icon-user-white.svg">
+                        </a>
+                    </div>
+                    <div class="header-action-icon-2 d-block d-lg-none">
+                        <div class="burger-icon burger-icon-white">
+                            <span class="burger-icon-top"></span>
+                            <span class="burger-icon-mid"></span>
+                            <span class="burger-icon-bottom"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </header>
 <section class="pt-150 pb-150">
     <div class="container">
         <div class="row">
@@ -131,7 +235,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link
-                                                " href="https://wowy.botble.com/customer/logout" aria-controls="dashboard" aria-selected="false">
+                                                " href="~/logout/Index" aria-controls="dashboard" aria-selected="false">
                                         <i class="fa fa-sign-out-alt mr-15" aria-hidden="true"></i>
                                         Logout
                                     </a>
@@ -149,6 +253,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="table-responsive">
+
                                             <table class="table">
                                                 <thead>
                                                     <tr>
@@ -159,9 +264,8 @@
                                                         <th>Details</th>
                                                     </tr>
                                                 </thead>
-                                                
                                                 <tbody>
-                                                    
+
                                                     @foreach (var item in Model)
                                                     {
                                                         <tr>
@@ -170,14 +274,26 @@
                                                             <td class="text-center">@item.saledate.ToShortDateString()</td>
                                                             <td class="text-center">@item.saleallprice $ for @item.salecount item(s)</td>
 
-                                                            <td class="text-center">@item.products.productsname / @item.products.Category.CategoryName</td>
+                                                            <td class="text-center">@item.products.productsname / @item.products.Categoryname</td>
 
-                                                            <td class="text-center"><a href="~/customerkargo/cuskargodetail/@item.kargono" class="btn btn-primary"><i class="fas fa-info"></i></a></td>
+                                                            <td class="text-center"><a href="/customersale/saledetail/@item.saleno" class="btn btn-primary"><i class="fas fa-info"></i></a></td>
 
+                                                            @*<td><button class="btn btn-primary" id="paypal-button-container">Submit with paypal</button></td>*@
+                                                            @*<td>
+                                                                    <div id="smart-button-container">
+                                                                        <div style="text-align: center;">
+                                                                            <div id="paypal-button-container"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>*@
                                                         </tr>
+
+
                                                     }
                                                 </tbody>
                                             </table>
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -186,55 +302,56 @@
                     </div>
 
                     @*<div class="col-md-8">
-                        <div class="tab-content dashboard-content">
-                            <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5 class="mb-0">Your Orders</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table">
+                            <div class="tab-content dashboard-content">
+                                <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="mb-0">Your Orders</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table">
 
-                                                <thead>
-                                                    <tr>
-                                                        <th>ID number</th>
-                                                        <th>Product</th>
-                                                        <th>Name</th>
-                                                        <th>Category</th>
-                                                        <th>Price</th>
-                                                        <th>Brend</th>
-                                                        <th>Date</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @{int id = 0;}
-                                                    @foreach (var item in Model)
-                                                    {
+                                                    <thead>
                                                         <tr>
-                                                            <td class="text-center">@{id++;}@id</td>
-
-                                                            <td class="text-center"><img src="@item.products.productimg" /></td>
-
-                                                            <td class="text-center">@item.products.productsname</td>
-                                                            <td class="text-center">@item.products.productndprice</td>
-
-                                                            <td class="text-center">@item.products.productmarka</td>
-
-                                                            <td class="text-center">@item.products.Category.CategoryName</td>
-                                                            <td class="text-center">@item.saledate.ToShortDateString()</td>
+                                                            <th>ID number</th>
+                                                            <th>Product</th>
+                                                            <th>Name</th>
+                                                            <th>Category</th>
+                                                            <th>Price</th>
+                                                            <th>Brend</th>
+                                                            <th>Date</th>
                                                         </tr>
-                                                    }
-                                                </tbody>
-                                            </table>
+                                                    </thead>
+                                                    <tbody>
+                                                        @{int id = 0;}
+                                                        @foreach (var item in Model)
+                                                        {
+                                                            <tr>
+                                                                <td class="text-center">@{id++;}@id</td>
+
+                                                                <td class="text-center"><img src="@item.products.productimg" /></td>
+
+                                                                <td class="text-center">@item.products.productsname</td>
+                                                                <td class="text-center">@item.products.productndprice</td>
+
+                                                                <td class="text-center">@item.products.productmarka</td>
+
+                                                                <td class="text-center">@item.products.Category.CategoryName</td>
+                                                                <td class="text-center">@item.saledate.ToShortDateString()</td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>*@
+                        </div>*@
                 </div>
             </div>
         </div>
     </div>
 </section>
+

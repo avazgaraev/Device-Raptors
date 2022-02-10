@@ -7,6 +7,7 @@ using WebApplication21.Models;
 
 namespace WebApplication21.Controllers
 {
+    [Authorize]
     public class customerchgpassController : Controller
     {
         context c = new context();

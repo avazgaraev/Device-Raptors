@@ -88,3 +88,13 @@ C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\PagedList.xml
 C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\PagedList.Mvc.xml
 C:\Users\USER\source\repos\WebApplication21\WebApplication21\obj\Debug\WebApplication21.Migrations.kargo.resources
 C:\Users\USER\source\repos\WebApplication21\WebApplication21\obj\Debug\WebApplication21.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\PayPal.dll
+C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\PayPal.xml
+C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\ClosedXML.dll
+C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\DocumentFormat.OpenXml.dll
+C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\ExcelNumberFormat.dll
+C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\System.IO.Packaging.dll
+C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\ClosedXML.pdb
+C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\ClosedXML.xml
+C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\DocumentFormat.OpenXml.xml
+C:\Users\USER\source\repos\WebApplication21\WebApplication21\bin\ExcelNumberFormat.xml

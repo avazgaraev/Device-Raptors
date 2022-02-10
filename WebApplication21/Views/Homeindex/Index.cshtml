@@ -19,19 +19,19 @@
             <div class="header-action-right">
                 <div class="header-action-2">
 
-                    <div class="header-action-icon-2">
+                    @*<div class="header-action-icon-2">
                         <a href="wishlist.html" class="wishlist-count">
                             <img class="svgInject" alt="Wishlist" src="~/Content/images/icons/icon-heart.svg">
                             <span class="pro-count blue"> <span>0</span></span>
                         </a>
-                    </div>
+                    </div>*@
                     <div class="header-action-icon-2">
                         <a class="mini-cart-icon" href="cart.html">
                             <img alt="Cart" src="~/Content/images/icons/icon-cart.svg">
-                            <span class="pro-count blue">0</span>
+                           
                         </a>
                         <div class="cart-dropdown-wrap cart-dropdown-hm2">
-                            <span>No products in the cart.</span>
+                            <a href="~/basket/Index" class="text-center" style="font-weight:bolder; color: var(--color-warning)">Let's see your basket</a>
                         </div>
                     </div>
                     <div class="header-action-icon-2">
@@ -41,20 +41,20 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  
     </div>
 </div>
 <div class="header-bottom header-bottom-bg-color sticky-bar gray-bg sticky-blue-bg">
     <div class="container">
         <div class="header-wrap header-space-between position-relative main-nav">
-            <div class="logo logo-width-1 d-block d-lg-none">
+            <div class="logo logo-width-1 d-block d-lg-none">">
                 <a href="~/Homeindex/Index"><img src="~/Content/storage/general/logo-light.png" alt="Wowy - Laravel Multipurpose eCommerce Script"></a>
             </div>
             <div class="main-categories-wrap d-none d-lg-block">
                 <a class="categories-button-active open  cant-close " href="#">
                     <span class="fa fa-list"></span> Browse Categories <i class="down far fa-chevron-down"></i> <i class="up far fa-chevron-up"></i>
                 </a>
-                @Html.Action("parcat1", "Homeindex")
+                @Html.Action("parcat11", "Homeindex")
             </div>
             <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block main-menu-light-white hover-boder hover-boder-white">
                 <nav>
@@ -73,7 +73,7 @@
                         
 
                         <li class="">
-                            <a href="contact.html" target="_self">
+                            <a href="~/Homeindex/contact" target="_self">
                                 Contact
                             </a>
                         </li>
@@ -139,819 +139,25 @@
                         </div>
                     </div>
                     <div class="col-lg-3 d-md-none d-lg-block wdiff">
-                        <div class="banner-img wow fadeIn animated banner-1">
-                            <img class="border-radius-10" src="~/Content/storage/promotion/4.png" alt="Gaming Area">
-                            <div class="banner-text">
-                                <span>Gaming Area</span>
-                                <h4>
-                                    Save 17% on<br>
-                                    Assus Laptop
-                                </h4>
-                                <a href="products.html">
-                                    Shop now <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="banner-img wow fadeIn animated banner-2">
-                            <img class="border-radius-10" src="~/Content/storage/promotion/5.png" alt="Smart Offer">
-                            <div class="banner-text">
-                                <span>Smart Offer</span>
-                                <h4>
-                                    Save 20% on<br>
-                                    iPhone 12
-                                </h4>
-                                <a href="products.html">
-                                    Shop now <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
+                        @Html.Action("sliderright", "Homeindex")
                     </div>
                 </div>
             </div>
         </section>
     </div><div>
-        <section id="product-collections" class="product-tabs pt-40 pb-30 wow fadeIn   animated" style="visibility: visible;">
+        <section id="product-collections" class="product-tabs pb-30 wow fadeIn   animated" style="visibility: visible;">
             <div class="container" title="Exclusive Products">
-                <ul role="tablist" class="nav nav-tabs"><li role="presentation" class="nav-item"><button data-bs-toggle="tab" data-bs-target="#new-arrival" type="button" role="tab" aria-controls="new-arrival" aria-selected="true" class="nav-link active">New Arrival</button></li><li role="presentation" class="nav-item"><button data-bs-toggle="tab" data-bs-target="#best-sellers" type="button" role="tab" aria-controls="best-sellers" aria-selected="true" class="nav-link">Best Sellers</button></li><li role="presentation" class="nav-item"><button data-bs-toggle="tab" data-bs-target="#special-offer" type="button" role="tab" aria-controls="special-offer" aria-selected="true" class="nav-link">Special Offer</button></li></ul>
+                <ul role="tablist" class="nav nav-tabs"><li role="presentation" class="nav-item"><button data-bs-toggle="tab" data-bs-target="#new-arrival" type="button" role="tab" aria-controls="new-arrival" aria-selected="true" class="nav-link active">New Arrival</button></li><li role="presentation" class="nav-item"><button data-bs-toggle="tab" data-bs-target="#best-sellers" type="button" role="tab" aria-controls="best-sellers" aria-selected="true" class="nav-link">Best Sellers</button></li>@*<li role="presentation" class="nav-item"><button data-bs-toggle="tab" data-bs-target="#special-offer" type="button" role="tab" aria-controls="special-offer" aria-selected="true" class="nav-link">Special Offer</button></li>*@</ul>
                 <div class="tab-content wow fadeIn" style="visibility: visible;">
-                    <div id="new-arrival" role="tabpanel" aria-labelledby="new-arrival-tab" class="tab-pane fade show active">
-                        <div class="row product-grid-4">
-                            <div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/smart-home-speaker">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/1-400x400.jpg" alt="Smart Home Speaker">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/1-1-400x400.jpg" alt="Smart Home Speaker">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/1"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/1"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/1"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/phones">Phones</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/smart-home-speaker">Smart Home Speaker</a></h2>
+                    @Html.Action("latest", "homeindex")
+                    @Html.Action("bestseller", "homeindex")
 
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 30%"></div>
-                                            </div>
-                                            <span class="rating_num">(2)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$287.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="1" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/headphone-ultra-bass">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/2-400x400.jpg" alt="Headphone Ultra Bass">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/2-1-400x400.jpg" alt="Headphone Ultra Bass">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/2"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/2"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/2"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/monitors">Monitors</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/headphone-ultra-bass">Headphone Ultra Bass</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 0%"></div>
-                                            </div>
-                                            <span class="rating_num">(0)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$221.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="2" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/chikie-bluetooth-speaker">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/4-400x400.jpg" alt="Chikie - Bluetooth Speaker">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/4-1-400x400.jpg" alt="Chikie - Bluetooth Speaker">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/4"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/4"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/4"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">-26%</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/security-protection">Security &amp; Protection</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/chikie-bluetooth-speaker">Chikie - Bluetooth Speaker</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 20%"></div>
-                                            </div>
-                                            <span class="rating_num">(1)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$54.02</span>
-                                            <span class="old-price">$74.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="4" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/macbook-air-12-inch">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/10-400x400.jpg" alt="Macbook Air 12 inch">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/10-1-400x400.jpg" alt="Macbook Air 12 inch">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/10"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/10"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/10"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/sport-outdoor">Sport &amp; Outdoor</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/macbook-air-12-inch">Macbook Air 12 inch</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 20%"></div>
-                                            </div>
-                                            <span class="rating_num">(1)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$468.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="10" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/apple-watch-serial-7">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/11-400x400.jpg" alt="Apple Watch Serial 7">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/11-1-400x400.jpg" alt="Apple Watch Serial 7">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/11"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/11"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/11"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/home-kitchen">Home &amp; Kitchen</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/apple-watch-serial-7">Apple Watch Serial 7</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 0%"></div>
-                                            </div>
-                                            <span class="rating_num">(0)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$114.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="11" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/hand-playstation">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/15-400x400.jpg" alt="Hand playstation">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/15-1-400x400.jpg" alt="Hand playstation">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/15"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/15"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/15"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/gaming-laptop">Gaming Laptop</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/hand-playstation">Hand playstation</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 0%"></div>
-                                            </div>
-                                            <span class="rating_num">(0)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$118.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="15" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/cool-smart-watches">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/17-400x400.jpg" alt="Cool Smart Watches">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/17-400x400.jpg" alt="Cool Smart Watches">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/17"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/17"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/17"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/books-office">Books &amp; Office</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/cool-smart-watches">Cool Smart Watches</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 60%"></div>
-                                            </div>
-                                            <span class="rating_num">(1)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$127.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="17" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/cool-smart-watches">
-                                                <img class="default-img" src="" alt="Cool Smart Watches">
-                                                <img class="hover-img" src="" alt="Cool Smart Watches">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            @if (cookie != null)
-                                            {
-                                                <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/17"><i class="far fa-eye"></i></a>
-                                                <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/17"><i class="far fa-heart"></i></a>
-                                                <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/17"><i class="far fa-exchange-alt"></i></a>
-                                            }
-                                            else
-                                            {
-                                                <a aria-label="Quick View" href="~/Homeindex/Login" class="action-btn hover-up js-quick-view-button"><i class="far fa-eye"></i></a>
-                                                <a aria-label="Add To Wishlist" href="~/Homeindex/Login" class="action-btn hover-up js-add-to-wishlist-button"><i class="far fa-heart"></i></a>
-                                                <a aria-label="Add To Compare" href="~/Homeindex/Login" class="action-btn hover-up js-add-to-compare-button"><i class="far fa-exchange-alt"></i></a>
-
-                                            }
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/books-office">Books &amp; Office</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/cool-smart-watches">Cool Smart Watches</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 60%"></div>
-                                            </div>
-                                            <span class="rating_num">(1)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$127.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="17" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="best-sellers" role="tabpanel" aria-labelledby="best-sellers-tab" class="tab-pane fade show active">
-                        <div class="row product-grid-4">
-                            <div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/boxed-bluetooth-headphone">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/3-400x400.jpg" alt="Boxed - Bluetooth Headphone">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/3-1-400x400.jpg" alt="Boxed - Bluetooth Headphone">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/3"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/3"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/3"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">-54%</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/security-protection">Security &amp; Protection</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/boxed-bluetooth-headphone">Boxed - Bluetooth Headphone</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 60%"></div>
-                                            </div>
-                                            <span class="rating_num">(1)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$215.10</span>
-                                            <span class="old-price">$478.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="3" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/camera-hikvision-hk-35vs8">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/5-400x400.jpg" alt="Camera Hikvision HK-35VS8">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/5-1-400x400.jpg" alt="Camera Hikvision HK-35VS8">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/5"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/5"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/5"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/jewelry-watch">Jewelry &amp; Watch</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/camera-hikvision-hk-35vs8">Camera Hikvision HK-35VS8</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 0%"></div>
-                                            </div>
-                                            <span class="rating_num">(0)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$50.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="5" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/camera-samsung-ss-24">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/6-400x400.jpg" alt="Camera Samsung SS-24">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/6-1-400x400.jpg" alt="Camera Samsung SS-24">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/6"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/6"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/6"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/home-kitchen">Home &amp; Kitchen</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/camera-samsung-ss-24">Camera Samsung SS-24</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 0%"></div>
-                                            </div>
-                                            <span class="rating_num">(0)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$54.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="6" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/apple-iphone-13-plus">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/8-400x400.jpg" alt="Apple iPhone 13 Plus">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/8-1-400x400.jpg" alt="Apple iPhone 13 Plus">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/8"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/8"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/8"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">-21%</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/home-improvements">Home Improvements</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/apple-iphone-13-plus">Apple iPhone 13 Plus</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 0%"></div>
-                                            </div>
-                                            <span class="rating_num">(0)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$98.75</span>
-                                            <span class="old-price">$125.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="8" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/macbook-pro-13-inch">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/12-400x400.jpg" alt="Macbook Pro 13 inch">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/12-1-400x400.jpg" alt="Macbook Pro 13 inch">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/12"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/12"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/12"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">-24%</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/sport-outdoor">Sport &amp; Outdoor</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/macbook-pro-13-inch">Macbook Pro 13 inch</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 0%"></div>
-                                            </div>
-                                            <span class="rating_num">(0)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$95.00</span>
-                                            <span class="old-price">$125.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="12" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/apple-airpods-serial-3">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/16-400x400.jpg" alt="Apple Airpods Serial 3">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/16-400x400.jpg" alt="Apple Airpods Serial 3">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/16"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/16"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/16"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">-12%</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/security-protection">Security &amp; Protection</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/apple-airpods-serial-3">Apple Airpods Serial 3</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 0%"></div>
-                                            </div>
-                                            <span class="rating_num">(0)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$112.23</span>
-                                            <span class="old-price">$129.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="16" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/historic-alarm-clock">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/21-400x400.jpg" alt="Historic Alarm Clock">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/21-1-400x400.jpg" alt="Historic Alarm Clock">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/21"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/21"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/21"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span style="background-color: #fe9931">Sale</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/monitors">Monitors</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/historic-alarm-clock">Historic Alarm Clock</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 0%"></div>
-                                            </div>
-                                            <span class="rating_num">(0)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$123.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="21" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="https://wowy.botble.com/products/phillips-mouse">
-                                                <img class="default-img" src="https://wowy.botble.com/storage/products/23-400x400.jpg" alt="Phillips Mouse">
-                                                <img class="hover-img" src="https://wowy.botble.com/storage/products/23-1-400x400.jpg" alt="Phillips Mouse">
-                                            </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick View" href="#" class="action-btn hover-up js-quick-view-button" data-url="https://wowy.botble.com/ajax/quick-view/23"><i class="far fa-eye"></i></a>
-                                            <a aria-label="Add To Wishlist" href="#" class="action-btn hover-up js-add-to-wishlist-button" data-url="https://wowy.botble.com/wishlist/23"><i class="far fa-heart"></i></a>
-                                            <a aria-label="Add To Compare" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="https://wowy.botble.com/compare/23"><i class="far fa-exchange-alt"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="https://wowy.botble.com/product-categories/technology-toys">Technology Toys</a>
-                                        </div>
-                                        <h2><a href="https://wowy.botble.com/products/phillips-mouse">Phillips Mouse</a></h2>
-
-                                        <div class="rating_wrap">
-                                            <div class="rating">
-                                                <div class="product_rate" style="width: 0%"></div>
-                                            </div>
-                                            <span class="rating_num">(0)</span>
-                                        </div>
-
-
-
-                                        <div class="product-price">
-                                            <span>$123.00</span>
-                                        </div>
-
-
-
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up add-to-cart-button" data-id="23" data-url="https://wowy.botble.com/cart/add-to-cart" href="#"><i class="far fa-shopping-bag"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
-    </div><div>
-        <section class="banners pt-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="banner-img wow fadeIn animated ">
-                            <img class="border-radius-10" src="~/Content/storage/promotion/1.png" alt="Smart Offer">
-                            <div class="banner-text">
-                                <span>Smart Offer</span>
-                                <h4>
-                                    Save 20% on<br>
-                                    iPhone 12
-                                </h4>
-                                <a href="products.html">
-                                    Shop now <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="banner-img wow fadeIn animated ">
-                            <img class="border-radius-10" src="~/Content/storage/promotion/2.png" alt="Sale off">
-                            <div class="banner-text">
-                                <span>Sale off</span>
-                                <h4>
-                                    Great Camera<br>
-                                    Collection
-                                </h4>
-                                <a href="products.html">
-                                    Shop now <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="banner-img wow fadeIn animated ">
-                            <img class="border-radius-10" src="~/Content/storage/promotion/3.png" alt="New Arrivals">
-                            <div class="banner-text">
-                                <span>New Arrivals</span>
-                                <h4>
-                                    Shop Today’s<br>
-                                    Deals &amp; Offers
-                                </h4>
-                                <a href="products.html">
-                                    Shop now <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div><div>
+    </div>
+    @Html.Action("banpartial", "Homeindex")
+    <div>
         <section class="featured section-padding-60">
             <div class="container">
                 <div class="row">
@@ -1002,83 +208,85 @@
                 </div>
             </div>
         </section>
-    </div><div>
-        <section class="popular-categories bg-grey-9 section-padding-60" id="featured-product-categories">
-            <div class="container wow fadeIn animated">
-                <h3 class="section-title mb-30">Top Categories</h3>
-                <featured-product-categories-component url="index.html"></featured-product-categories-component>
-            </div>
-        </section>
-    </div><div>
-        <section class="section-padding-60" id="featured-products">
-            <div class="container wow fadeIn animated">
-                <h3 class="section-title style-1 mb-30">Featured products</h3>
-                <featured-products-component url="index.html?limit=8"></featured-products-component>
-            </div>
-        </section>
-    </div><div>
-        <section class="deals mb-60" id="flash-sale-products">
-            <div class="container">
-                <flash-sale-products-component url="index.html?limit=2"></flash-sale-products-component>
-            </div>
-        </section>
-        <div class="modal fade custom-modal" id="flash-sale-modal" data-id="flash-sale-id-1" tabindex="-1" aria-labelledby="onloadModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-body">
-                        <div class="deal" style="background-image: url(~/Content/storage/flash-sales/1.jpg);">
-                            <div class="deal-top">
-                                <h2 class="text-brand">Deal of the Day.</h2>
-                                <h5>Limited quantities.</h5>
-                            </div>
-                            <div class="deal-content">
-                                <h6 class="product-title"><a href="products/boxed-bluetooth-headphone.html">Boxed - Bluetooth Headphone</a></h6>
-                                <div class="product-price">
-                                    <span class="new-price">4,990,965₫</span>
-                                    <span class="old-price">11,091,034₫</span>
+    </div>
+    @*<div>
+            <section class="popular-categories bg-grey-9 section-padding-60" id="featured-product-categories">
+                <div class="container wow fadeIn animated">
+                    <h3 class="section-title mb-30">Top Categories</h3>
+                    <featured-product-categories-component url="index.html"></featured-product-categories-component>
+                </div>
+            </section>
+        </div>*@
+    @*<div>
+            <section class="section-padding-60" id="featured-products">
+                <div class="container wow fadeIn animated">
+                    <h3 class="section-title style-1 mb-30">Featured products</h3>
+                    <featured-products-component url="index.html?limit=8"></featured-products-component>
+                </div>
+            </section>
+        </div>*@<div>
+            <section class="deals mb-60" id="flash-sale-products">
+                <div class="container">
+                    <flash-sale-products-component url="index.html?limit=2"></flash-sale-products-component>
+                </div>
+            </section>
+            <div class="modal fade custom-modal" id="flash-sale-modal" data-id="flash-sale-id-1" tabindex="-1" aria-labelledby="onloadModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-body">
+                            <div class="deal" style="background-image: url(~/Content/storage/flash-sales/1.jpg);">
+                                <div class="deal-top">
+                                    <h2 class="text-brand">Deal of the Day.</h2>
+                                    <h5>Limited quantities.</h5>
+                                </div>
+                                <div class="deal-content">
+                                    <h6 class="product-title"><a href="products/boxed-bluetooth-headphone.html">Boxed - Bluetooth Headphone</a></h6>
+                                    <div class="product-price">
+                                        <span class="new-price">4,990,965₫</span>
+                                        <span class="old-price">11,091,034₫</span>
+                                    </div>
+                                </div>
+                                <div class="deal-bottom">
+                                    <p>Hurry Up! Offer End In:</p>
+                                    <div class="deals-countdown" data-countdown="2021/12/21"></div>
+                                    <a href="products/boxed-bluetooth-headphone.html" class="btn hover-up">Shop Now <i class="fa fa-arrow-right"></i></a>
                                 </div>
                             </div>
-                            <div class="deal-bottom">
-                                <p>Hurry Up! Offer End In:</p>
-                                <div class="deals-countdown" data-countdown="2021/12/21"></div>
-                                <a href="products/boxed-bluetooth-headphone.html" class="btn hover-up">Shop Now <i class="fa fa-arrow-right"></i></a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div><div>
+            <section class="banners pt-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="banner-img banner-big wow fadeIn animated">
+                                <img src="~/Content/storage/promotion/6.png" alt="Repair Services">
+                                <div class="banner-text">
+                                    <h4 class="mb-15 mt-40 text-white">Repair Services</h4>
+                                    <h2 class="fw-600 mb-20 text-white">
+                                        We're an Apple<br />
+                                        Authorised Service Provider
+                                    </h2>
+                                    <a href="products.html" class="btn">
+                                        Learn more <i class="fa fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div><div>
+            <section class="section-padding-60" id="featured-brands">
+                <div class="container">
+                    <h3 class="section-title style-1 mb-30 wow fadeIn animated">Featured Brands</h3>
+                    <featured-brands-component url="index.html"></featured-brands-component>
+                </div>
+            </section>
         </div>
-    </div><div>
-        <section class="banners pt-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="banner-img banner-big wow fadeIn animated">
-                            <img src="~/Content/storage/promotion/6.png" alt="Repair Services">
-                            <div class="banner-text">
-                                <h4 class="mb-15 mt-40 text-white">Repair Services</h4>
-                                <h2 class="fw-600 mb-20 text-white">
-                                    We're an Apple<br />
-                                    Authorised Service Provider
-                                </h2>
-                                <a href="products.html" class="btn">
-                                    Learn more <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div><div>
-        <section class="section-padding-60" id="featured-brands">
-            <div class="container">
-                <h3 class="section-title style-1 mb-30 wow fadeIn animated">Featured Brands</h3>
-                <featured-brands-component url="index.html"></featured-brands-component>
-            </div>
-        </section>
-    </div>
 
 
 
@@ -1092,7 +300,7 @@
 
 
 
-</main>
+    </main>
 @Html.Action("partialcat", "Homeindex")
 
 

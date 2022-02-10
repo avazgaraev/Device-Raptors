@@ -1,0 +1,30 @@
+﻿@using WebApplication21.Models
+@model List<altbanner> 
+
+<div>
+    <section class="banners pt-60">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+
+                <div class="col-md-4">
+                    <div class="banner-img wow fadeIn animated ">
+                        <img class="border-radius-10" src="@item.sliderimg" alt="Smart Offer">
+                        <div class="banner-text">
+                            <span>@item.sliderheader</span>
+                            <h4>
+                                @item.slidertoprod
+                            </h4>
+                            <a href="products.html">
+                                Shop now <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                }
+                
+            </div>
+        </div>
+    </section>
+</div>

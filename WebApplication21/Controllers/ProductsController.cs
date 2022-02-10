@@ -22,7 +22,7 @@ namespace WebApplication21.Controllers
                 prods =prods.Where(e => e.productsname.Contains(p));
                
             }
-            return View(prods.ToList().ToPagedList(pages, 12));
+            return View(prods.Where(x => x.productavailable == true).ToList().ToPagedList(pages, 30));
         }
         public ActionResult productadd()
         {

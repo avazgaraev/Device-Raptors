@@ -46,6 +46,9 @@ namespace WebApplication21.Models
         public string customerpass { get; set; }
 
         public bool available { get; set; }
-        public ICollection<salemove> Salemoves { get; set; } 
+        public ICollection<salemove> Salemoves { get; set; }
+
+        public virtual ICollection<cusaddress> Cusaddresses{ get; set; }
+
     }
 }

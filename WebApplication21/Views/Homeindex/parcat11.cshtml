@@ -1,0 +1,43 @@
+﻿@model List<WebApplication21.Models.Category>
+
+<div class="categories-dropdown-wrap categories-dropdown-active-large default-open open">
+    <ul>
+        <li>
+            <a href="product-categories/hot-promotions.html">
+                <i class="far fa-star"></i>
+                Hot Promotions
+            </a>
+        </li>
+        
+        @foreach (var item in Model)
+        {
+            <li class="has-children">
+                <a href="#">
+                    <i class="wowy-font-cpu"></i>
+                    @item.CategoryName
+                </a>
+                <div class="dropdown-menu">
+                    <ul>
+                       
+                        @foreach (var item1 in item.Subcategories)
+                        {
+                            
+                            <li><a class="dropdown-item nav-link nav_item" href="~/Homeindex/prodcat/@item1.SubcategoryId">@item1.SubcategoryName</a></li>
+                        }
+                        
+                    </ul>
+                </div>
+            </li>
+        }
+        
+
+       
+
+
+
+
+
+    </ul>
+
+</div>
+

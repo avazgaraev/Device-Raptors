@@ -70,10 +70,10 @@ namespace WebApplication21.Controllers
         public PartialViewResult partial1()
         {
             var values2 = from x in c.Products
-                          group x by x.Category.CategoryName into g
+                          group x by x.Subcategory.SubcategoryName into g
                           select new classgroup2
                           {
-                              Category = g.Key,
+                              subcategory = g.Key,
                               Count = g.Count()
         };
             return PartialView(values2.ToList());

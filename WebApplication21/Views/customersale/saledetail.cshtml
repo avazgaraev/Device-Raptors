@@ -1,0 +1,94 @@
+﻿@using WebApplication21.Models
+@model List<salemove>
+@{
+    ViewBag.Title = "saledetail";
+    Layout = "~/Shared/layoutviews.cshtml";
+}
+
+
+
+
+<table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+    <thead>
+
+        <tr>
+            <th>Image</th>
+            <th>Product</th>
+            <th>Count</th>
+            <th>Price</th>
+            <th>All price</th>
+            <th>Date</th>
+            <th>Purchase </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td><img src="@item.products.productimg" style="width:300px"/></td>
+            <td>@item.products.productsname</td>
+            <td>@item.salecount</td>
+            <td>@item.saleprice</td>
+            <td>@item.saleallprice</td>
+            <td>@item.saledate</td>
+            @*<td><a href="/Sales/saledetail/@item.saleid" class="btn btn-info"><i class="fas fa-info"></i></a></td>*@
+            <td>
+                <div id="smart-button-container">
+                    <div style="text-align: center;">
+                        <div id="paypal-button-container"></div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+
+<script src="https://www.paypal.com/sdk/js?client-id=Abse9xOECMKKQ2qPnFwuSmOwXLmifGx7RhpRQg_vbXbYk_QBKFMvRSOqxBiDO4DI22WH9x-m9pb8R2oz&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+<script>
+    function initPayPalButton() {
+        paypal.Buttons({
+            style: {
+                shape: 'rect',
+                color: 'gold',
+                layout: 'vertical',
+                label: 'paypal',
+
+            },
+
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{ "amount": { "currency_code": "USD", "value": "@Model.Select(y => y.saleallprice).FirstOrDefault().ToString()" } }]
+                });
+            },
+
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (orderData) {
+
+                    // Full available details
+                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+                    // Show a success message within this page, e.g.
+                    const element = document.getElementById('paypal-button-container');
+                    element.innerHTML = '';
+                    element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+                    // Or go to another URL:  actions.redirect('thank_you.html');
+
+                });
+            },
+
+            onError: function (err) {
+                console.log(err);
+            }
+        }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+</script>

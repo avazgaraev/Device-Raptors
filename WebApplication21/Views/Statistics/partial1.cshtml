@@ -21,10 +21,10 @@
                 {
                     <tr>
                         <td>@{sira++;}@sira</td>
-                        <td>@item.Category</td>
+                        <td>@item.subcategory</td>
                         <td>
                             <div class="progress progress-xs">
-                                <div class="progress-bar progress-bar-danger" style="width: @item.Count%;"></div>
+                                <div class="progress-bar progress-bar-danger" style="width: ((@item.Count/@item.subcategory.Count())*100)%;"></div>
                             </div>
                         </td>
                         <td>@item.Count</td>

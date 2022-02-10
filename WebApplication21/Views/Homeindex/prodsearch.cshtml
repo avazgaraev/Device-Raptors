@@ -1,0 +1,161 @@
+﻿@using WebApplication21.Models;
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<products>
+@{
+    ViewBag.Title = "prodsearch";
+    Layout = "~/Shared/layoutviews.cshtml";
+}
+
+<div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+    <div class="container">
+        <div class="header-wrap header-space-between">
+            <div class="logo logo-width-1">
+                <a href="~/Homeindex/Index"><img src="~/Content/storage/general/logom.png" alt="Device Raptors"></a>
+            </div>
+            @Html.Action("parcat", "Homeindex")
+            <div class="header-action-right">
+                <div class="header-action-2">
+
+
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="~/basket/Index">
+                            <img alt="Cart" src="~/Content/images/icons/icon-cart.svg">
+               
+                        </a>
+                        <div class="cart-dropdown-wrap cart-dropdown-hm2">
+                            <a href="~/basket/Index" class="text-center" style="font-weight:bolder; color: var(--color-warning)">Let's see your basket</a>
+                        </div>
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/customerpanel/Index">
+                            <img alt="Sign In" src="~/Content/images/icons/icon-user.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header-bottom header-bottom-bg-color sticky-bar gray-bg sticky-blue-bg">
+    <div class="container">
+        <div class="header-wrap header-space-between position-relative main-nav">
+            <div class="logo logo-width-1 d-block d-lg-none">
+                <a href="index.html"><img src="~/Content/storage/general/logo-light.png" alt="Device Raptors"></a>
+            </div>
+            <div class="main-categories-wrap d-none d-lg-block">
+                <a class="categories-button-active cant-close" href="#">
+                    <span class="fa fa-list"></span> Browse Categories <i class="down far fa-chevron-down"></i> <i class="up far fa-chevron-up"></i>
+                </a>
+                @Html.Action("parcat11", "Homeindex")
+            </div>
+
+            <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block main-menu-light-white hover-boder hover-boder-white">
+                <nav>
+                    <ul>
+                        <li class="">
+                            <a href="~/Homeindex/Index" class="active" target="_self">
+                                Home
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="~/Homeindex/Shop" target="_self">
+                                Shop
+                            </a>
+
+                        </li>
+
+
+                        <li class="">
+                            <a href="~/Homeindex/contact" target="_self">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hotline d-none d-lg-block">
+                <p><i class="fa fa-phone-alt"></i><span>Hotline</span> 1900 - 888</p>
+            </div>
+            <div class="header-action-right d-block d-lg-none">
+                <div class="header-action-2">
+
+                    @*<div class="header-action-icon-2">
+                            <a href="wishlist.html">
+                                <img alt="wowy" src="~/Content/images/icons/icon-heart-white.svg">
+                                <span class="pro-count white"> <span>0</span></span>
+                            </a>
+                        </div>*@
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="~/basket/Index">
+                            <img alt="wowy" src="~/Content/images/icons/icon-cart-white.svg">
+                        </a>
+                        @*<div class="cart-dropdown-wrap cart-dropdown-hm2">
+                                <span>No products in the cart.</span>
+                            </div>*@
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/Homeindex/login">
+                            <img alt="wowy" src="~/Content/images/icons/icon-user-white.svg">
+                        </a>
+                    </div>
+                    <div class="header-action-icon-2 d-block d-lg-none">
+                        <div class="burger-icon burger-icon-white">
+                            <span class="burger-icon-top"></span>
+                            <span class="burger-icon-mid"></span>
+                            <span class="burger-icon-bottom"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </header>
+<section class="mt-60 mb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 primary-sidebar sticky-sidebar">
+            </div>
+            <div class="col-lg-9">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-md-4">
+                            <div class="product-cart-wrap mb-30">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="~/productview/Index/@item.productsid">
+                                            <img class="default-img" src="@item.productimg" alt="Smart Home Speaker">
+                                            <img class="hover-img" src="@item.productimg" alt="Smart Home Speaker">
+                                        </a>
+                                    </div>
+
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="product-category">
+                                        <a href="~/Homeindex/prodcat/@item.Categoryid">@item.Categoryname</a>
+                                    </div>
+                                    <h2><a href="~/productview/Index/@item.productsid">@item.productsname</a></h2>
+
+                                    <div class="product-price">
+                                        <span>$@item.productndprice</span>
+                                    </div>
+                                    <div class="product-action-1 show">
+                                        <a href="~/basket/addbasket/@item.productsid">Add to basket</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                @Html.PagedListPager((IPagedList)Model, pages => Url.Action("prodsearch", new { pages })
+                , new PagedListRenderOptions { LiElementClasses = new List<string> { "page-link" } })
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Action("partialcat", "Homeindex")

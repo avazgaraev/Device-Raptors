@@ -1,11 +1,114 @@
 ﻿@using WebApplication21.Models
-@model List<customer>
+@model List<cusaddress>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Shared/layoutviews.cshtml";
 }
+<div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+    <div class="container">
+        <div class="header-wrap header-space-between">
+            <div class="logo logo-width-1">
+                <a href="~/Homeindex/Index"><img src="~/Content/storage/general/logom.png" alt="Device Raptors"></a>
+            </div>
+            @Html.Action("parcat", "Homeindex")
+            <div class="header-action-right">
+                <div class="header-action-2">
 
+
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="cart.html">
+                            <img alt="Cart" src="~/Content/images/icons/icon-cart.svg">
+                        </a>
+                        <div class="cart-dropdown-wrap cart-dropdown-hm2">
+                            <a href="~/basket/Index" class="text-center" style="font-weight:bolder; color: var(--color-warning)">Let's see your basket</a>
+                        </div>
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/customerpanel/Index">
+                            <img alt="Sign In" src="~/Content/images/icons/icon-user.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header-bottom header-bottom-bg-color sticky-bar gray-bg sticky-blue-bg">
+    <div class="container">
+        <div class="header-wrap header-space-between position-relative main-nav">
+            <div class="logo logo-width-1 d-block d-lg-none">
+                <a href="index.html"><img src="~/Content/storage/general/logo-light.png" alt="Device Raptors"></a>
+            </div>
+            <div class="main-categories-wrap d-none d-lg-block">
+                <a class="categories-button-active cant-close" href="#">
+                    <span class="fa fa-list"></span> Browse Categories <i class="down far fa-chevron-down"></i> <i class="up far fa-chevron-up"></i>
+                </a>
+                @Html.Action("parcat1", "Homeindex")
+            </div>
+
+            <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block main-menu-light-white hover-boder hover-boder-white">
+                <nav>
+                    <ul>
+                        <li class="">
+                            <a href="~/Homeindex/Index" class="active" target="_self">
+                                Home
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="~/Homeindex/Shop" target="_self">
+                                Shop
+                            </a>
+
+                        </li>
+
+
+                        <li class="">
+                            <a href="~/Homeindex/contact" target="_self">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hotline d-none d-lg-block">
+                <p><i class="fa fa-phone-alt"></i><span>Hotline</span> 1900 - 888</p>
+            </div>
+            <div class="header-action-right d-block d-lg-none">
+                <div class="header-action-2">
+
+                    @*<div class="header-action-icon-2">
+                            <a href="wishlist.html">
+                                <img alt="wowy" src="~/Content/images/icons/icon-heart-white.svg">
+                                <span class="pro-count white"> <span>0</span></span>
+                            </a>
+                        </div>*@
+                    <div class="header-action-icon-2">
+                        <a class="mini-cart-icon" href="~/customersale/Index">
+                            <img alt="wowy" src="~/Content/images/icons/icon-cart-white.svg">
+                        </a>
+                        <div class="cart-dropdown-wrap cart-dropdown-hm2">
+                            <a href="~/basket/Index" class="text-center" style="font-weight:bolder; color: var(--color-warning)">Let's see your basket</a>
+                        </div>
+                    </div>
+                    <div class="header-action-icon-2">
+                        <a href="~/Homeindex/login">
+                            <img alt="wowy" src="~/Content/images/icons/icon-user-white.svg">
+                        </a>
+                    </div>
+                    <div class="header-action-icon-2 d-block d-lg-none">
+                        <div class="burger-icon burger-icon-white">
+                            <span class="burger-icon-top"></span>
+                            <span class="burger-icon-mid"></span>
+                            <span class="burger-icon-bottom"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </header>
 <section class="pt-150 pb-150">
     <div class="container">
         <div class="row">
@@ -13,17 +116,8 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="row">
-                            
-                            <div class="col-8">
-                                <div class="profile-usertitle-name pt-2">
-                                    @foreach (var item in Model)
-                                    {
 
-                                        <strong>@item.customername @item.customersurname</strong>
-                                        <p><small>@HttpContext.Current.User.Identity.Name</small></p>
-                                    }
-                                </div>
-                            </div>
+                            @Html.Action("partcus", "customeraddress")
                         </div>
                         <hr>
                         <div class="dashboard-menu">
@@ -62,7 +156,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link
-                                                " href="~/customersale/Index" aria-controls="dashboard" aria-selected="false">
+                                                " href="~/customerkargo/Index" aria-controls="dashboard" aria-selected="false">
                                         <i class="fa fa-shopping-basket mr-15" aria-hidden="true"></i>
                                         Cargo
                                     </a>
@@ -104,7 +198,7 @@
                                 <div class="row">
                                     @foreach (var item in Model)
                                     {
-                                        if (item.customeraddress == "")
+                                        if (item is null)
                                         {
 
                                             <div class="col-12">
@@ -118,9 +212,40 @@
                                         }
                                         else
                                         {
-                                            <div class="col-12">
-                                                <h1>@item.customeraddress</h1> 
-                                                    
+                                           
+                                            <div class="col-lg-6 dashboard-address-item ">
+                                                <div class="card h-100 mb-3 mb-lg-0 mb-2">
+                                                    <div class="card-header">
+                                                        <h5 class="mb-0">
+                                                            @item.Customer.customername
+                                                        </h5>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <address>
+                                                            <br> @item.addstate
+                                                            <p>@item.addcity</p>
+                                                            <p>@item.zipcode</p>
+                                                        </address>
+                                                        <p>
+                                                            <i class="fas fa-phone-square-alt"></i>
+                                                            <span class="ml-1">@item.Customer.customerphone</span>
+                                                        </p>
+                                                        <p>
+                                                            <i class="fas fa-envelope-square"></i>
+                                                            <span class="ml-1">@HttpContext.Current.User.Identity.Name</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="card-footer border-top-0">
+                                                        <div class="row">
+                                                            <div class="col-auto me-auto">
+                                                                <a href="~/customeraddress/editadd/@item.addressid">Edit</a>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <a class="text-danger btn-trigger-delete-address" href="~/customeraddress/removeadd/@item.addressid" >Remove</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         }
                                     }

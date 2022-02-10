@@ -1,5 +1,5 @@
 ﻿@using WebApplication21.Models
-@model List<Category>
+@model List<subcategory>
 
 <div class="sidebar-widget widget_categories mb-30 p-30 bg-grey border-radius-10">
     <div class="widget-header position-relative mb-20 pb-10">
@@ -11,7 +11,7 @@
             @foreach (var item in Model)
             {
 
-                <li class="cat-item text-muted"><a href="/Homeindex/prodcat/@item.CategoryID">@item.CategoryName</a></li>
+                <li class="cat-item text-muted"><a href="/Homeindex/prodcat/@item.SubcategoryId">@item.SubcategoryName</a>@*@item.Productss.Where(x=>x.Categoryid==item.CategoryID).ToList().Count()*@</li>
             }
         </ul>
     </div>

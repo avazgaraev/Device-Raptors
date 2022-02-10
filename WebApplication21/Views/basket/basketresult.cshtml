@@ -1,0 +1,16 @@
+﻿@using WebApplication21.Models
+@model  List<basket>
+    
+
+
+        <tr>
+            <td class="cart_total_label">Tax</td>
+           
+            
+        </tr>
+        <tr>
+
+            <td class="cart_total_label">Total <small>(Shipping fees not included)</small></td>
+            <td class="cart_total_amount"><strong><span class="font-xl fw-900 text-brand">$@Model.Select(x=>x.basketallprice).Sum()</span></strong></td>
+        </tr>
+    
